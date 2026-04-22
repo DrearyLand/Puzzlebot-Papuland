@@ -1,0 +1,9 @@
+yaml_reader_parameters:
+  ros__parameters:
+    bool_value: false
+    int_value: 7
+    float_value: 3.1416
+    str_value: "Hola a todos "
+    nested_param:
+      another_int: 2024
+      another_float: 1.23

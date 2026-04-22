@@ -1,0 +1,13 @@
+<?xml version="1.0">
+
+<robot name="link_example">
+
+<link name = "Link1"/>
+<link name = "Link2"/>
+<link name = "Link3"/>
+<link name = "Link4"/>
+
+<joint name="joint1" type = "fixed">
+    <parent link = "link1"/>
+    <child link = "link2"/>
+    
