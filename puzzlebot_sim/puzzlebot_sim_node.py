@@ -14,8 +14,8 @@ class PuzzlebotSim(Node):
         # Declarar y leer parámetros de posición inicial
         self.declare_parameter('x0', 0.0)
         self.declare_parameter('y0', 0.0)
-        self.x = self.get_parameter('x0').value
-        self.y = self.get_parameter('y0').value
+        self.x = float(self.get_parameter('x0').value)
+        self.y = float(self.get_parameter('y0').value)
         self.theta = 0.0
         self.v = 0.0
         self.w = 0.0

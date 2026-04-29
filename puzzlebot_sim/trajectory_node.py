@@ -8,37 +8,22 @@ class TrajectoryNode(Node):
     def __init__(self):
         super().__init__('trajectory_node')
         
-        # Extracción del namespace para asignar la trayectoria correspondiente
-        ns = self.get_namespace()
-        
-        if 'robot1' in ns:
-            # Trayectoria Robot 1: Cuadrado 2x2m (Inicia en 0.0, 0.0)
-            self.points = [#!/usr/bin/env python3
-import rclpy
-from rclpy.node import Node
-from std_msgs.msg import Bool
-from nav_msgs.msg import Odometry
-
-class TrajectoryNode(Node):
-    def __init__(self):
-        super().__init__('trajectory_node')
-        
-        # Leemos los parámetros iniciales para saber de dónde parte cada robot
+        # Extracción segura de parámetros como flotantes
         self.declare_parameter('x0', 0.0)
         self.declare_parameter('y0', 0.0)
         
-        x0 = self.get_parameter('x0').value
-        y0 = self.get_parameter('y0').value
+        x0 = float(self.get_parameter('x0').value)
+        y0 = float(self.get_parameter('y0').value)
         
-        # Tamaño del cuadrado (Lado de 2 metros)
+        # Lado del cuadrado (2 metros)
         L = 2.0
         
-        # Generamos el cuadrado relativo a su posición inicial
+        # Coordenadas relativas al punto de inicio
         self.points = [
-            (x0 + L, y0),         # Avanza en X
-            (x0 + L, y0 + L),     # Sube en Y
-            (x0, y0 + L),         # Regresa en X
-            (x0, y0)              # Vuelve al origen (punto de inicio)
+            (x0 + L, y0),         
+            (x0 + L, y0 + L),     
+            (x0, y0 + L),         
+            (x0, y0)              
         ]
         
         self.current_index = 0
@@ -54,10 +39,11 @@ class TrajectoryNode(Node):
         if current_flag and not self.last_flag: 
             self.current_index += 1
             if self.current_index >= len(self.points):
-                self.get_logger().info('¡Cuadrado completado exitosamente!')
+                self.get_logger().info('Rutina cuadrada completada.')
                 self.current_index = len(self.points) - 1
             else:
-                self.get_logger().info(f'Navegando al vértice {self.current_index + 1}')
+                self.get_logger().info(f'Transitando al vértice {self.current_index + 1}')
+        
         self.last_flag = current_flag
 
     def publish_point(self):

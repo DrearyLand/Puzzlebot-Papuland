@@ -12,12 +12,11 @@ def generate_launch_description():
     with open(urdf_file, 'r') as f:
         robot_desc = f.read()
 
-    # Argumentos recibidos desde el launch principal
     robot_name = LaunchConfiguration('robot_name')
     x0 = LaunchConfiguration('x0')
     y0 = LaunchConfiguration('y0')
 
-    # Agrupar todos los nodos bajo el namespace del robot
+    # Al quitar el TimerAction, TODOS los nodos obedecerán a este Namespace
     robot_group = GroupAction([
         PushRosNamespace(robot_name),
 

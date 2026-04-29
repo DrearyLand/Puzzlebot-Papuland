@@ -33,8 +33,8 @@ class LocalisationNode(Node):
         
         self.r = 0.05
         self.l = 0.19
-        self.x = self.get_parameter('x0').value
-        self.y = self.get_parameter('y0').value
+        self.x = float(self.get_parameter('x0').value)
+        self.y = float(self.get_parameter('y0').value)
         self.theta = 0.0
         self.wr = 0.0
         self.wl = 0.0
