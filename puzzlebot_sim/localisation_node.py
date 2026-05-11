@@ -24,7 +24,6 @@ class LocalisationNode(Node):
     def __init__(self):
         super().__init__('localisation_node')
         
-        # Configuración de Namespace para TF
         ns = self.get_namespace().strip('/')
         self.prefix = f"{ns}/" if ns else ""
         
@@ -41,6 +40,11 @@ class LocalisationNode(Node):
         self.angle_r = 0.0
         self.angle_l = 0.0
 
+        # MINICHALLENGE 4: Inicialización de Covarianza y Constantes de Ruido
+        self.P = np.zeros((3, 3)) # Matriz de covarianza Sigma_k (3x3)
+        self.kr = 0.5  # Valor semilla "inventado". SE CAMBIA TRAS EXPERIMENTO FÍSICO.
+        self.kl = 0.5  # Valor semilla "inventado".
+
         self.create_subscription(Float32, 'wr', self.wr_callback, 10)
         self.create_subscription(Float32, 'wl', self.wl_callback, 10)
         
@@ -54,9 +58,40 @@ class LocalisationNode(Node):
     def wr_callback(self, msg): self.wr = msg.data
     def wl_callback(self, msg): self.wl = msg.data
 
+    def update_covariance(self, v, dt):
+
+        # MINICHALLENGE 4: Propagación de Incertidumbre
+        
+        # 1. Jacobiano H_k
+        J_h = np.array([
+            [1.0, 0.0, -v * dt * math.sin(self.theta)],
+            [0.0, 1.0,  v * dt * math.cos(self.theta)],
+            [0.0, 0.0,  1.0]
+        ])
+
+        # 2. Matriz de ruido Q_k
+        Sigma_delta = np.array([
+            [self.kr * abs(self.wr), 0.0],
+            [0.0, self.kl * abs(self.wl)]
+        ])
+        
+        nabla_w = 0.5 * self.r * dt * np.array([
+            [math.cos(self.theta), math.cos(self.theta)],
+            [math.sin(self.theta), math.sin(self.theta)],
+            [2.0/self.l, -2.0/self.l]
+        ])
+        
+        Q = nabla_w @ Sigma_delta @ nabla_w.T
+
+        # 3. Actualización de P (Sigma_k)
+        self.P = J_h @ self.P @ J_h.T + Q
+
     def update_odometry(self):
         v = self.r * (self.wr + self.wl) / 2.0
         w = self.r * (self.wr - self.wl) / self.l
+        
+        # Actualizamos la matemática de la elipse ANTES de mover al robot
+        self.update_covariance(v, self.dt)
         
         self.x += v * math.cos(self.theta) * self.dt
         self.y += v * math.sin(self.theta) * self.dt
@@ -68,7 +103,7 @@ class LocalisationNode(Node):
         current_time = self.get_clock().now().to_msg()
         q = quaternion_from_euler(0.0, 0.0, self.theta)
         
-        # Odometry
+        # Publicación de Odometría
         odom = Odometry()
         odom.header.stamp = current_time
         odom.header.frame_id = f"{self.prefix}odom"
@@ -79,6 +114,19 @@ class LocalisationNode(Node):
         odom.pose.pose.orientation.y = q[1]
         odom.pose.pose.orientation.z = q[2]
         odom.pose.pose.orientation.w = q[3]
+        
+        # MINICHALLENGE 4: Llenado de matriz 6x6 (36 espacios)
+        odom.pose.covariance = [0.0] * 36
+        odom.pose.covariance[0]  = self.P[0, 0]  # var x
+        odom.pose.covariance[7]  = self.P[1, 1]  # var y
+        odom.pose.covariance[35] = self.P[2, 2]  # var theta
+        odom.pose.covariance[1]  = self.P[0, 1]  # cov xy
+        odom.pose.covariance[6]  = self.P[1, 0]  # cov yx
+        odom.pose.covariance[5]  = self.P[0, 2]  # cov x_theta
+        odom.pose.covariance[30] = self.P[2, 0]  # cov theta_x
+        odom.pose.covariance[11] = self.P[1, 2]  # cov y_theta
+        odom.pose.covariance[31] = self.P[2, 1]  # cov theta_y
+
         self.odom_pub.publish(odom)
         
         # TF
