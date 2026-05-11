@@ -8,22 +8,15 @@ class TrajectoryNode(Node):
     def __init__(self):
         super().__init__('trajectory_node')
         
-        # Extracción segura de parámetros como flotantes
         self.declare_parameter('x0', 0.0)
         self.declare_parameter('y0', 0.0)
         
         x0 = float(self.get_parameter('x0').value)
         y0 = float(self.get_parameter('y0').value)
         
-        # Lado del cuadrado (2 metros)
-        L = 2.0
-        
-        # Coordenadas relativas al punto de inicio
+        # Modificación MC4: Trayectoria de línea recta de 1 metro
         self.points = [
-            (x0 + L, y0),         
-            (x0 + L, y0 + L),     
-            (x0, y0 + L),         
-            (x0, y0)              
+            (x0 + 1.0, y0)  # Solo avanza 1 metro en el eje X
         ]
         
         self.current_index = 0
@@ -39,7 +32,7 @@ class TrajectoryNode(Node):
         if current_flag and not self.last_flag: 
             self.current_index += 1
             if self.current_index >= len(self.points):
-                self.get_logger().info('Rutina cuadrada completada.')
+                self.get_logger().info('Experimento de línea recta (1 metro) completado.')
                 self.current_index = len(self.points) - 1
             else:
                 self.get_logger().info(f'Transitando al vértice {self.current_index + 1}')

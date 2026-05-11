@@ -42,8 +42,8 @@ class LocalisationNode(Node):
 
         # MINICHALLENGE 4: Inicialización de Covarianza y Constantes de Ruido
         self.P = np.zeros((3, 3)) # Matriz de covarianza Sigma_k (3x3)
-        self.kr = 0.5  # Valor semilla "inventado". SE CAMBIA TRAS EXPERIMENTO FÍSICO.
-        self.kl = 0.5  # Valor semilla "inventado".
+        self.kr = 10  # Valor semilla "inventado". SE CAMBIA TRAS EXPERIMENTO FÍSICO.
+        self.kl = 10  # Valor semilla "inventado".
 
         self.create_subscription(Float32, 'wr', self.wr_callback, 10)
         self.create_subscription(Float32, 'wl', self.wl_callback, 10)
