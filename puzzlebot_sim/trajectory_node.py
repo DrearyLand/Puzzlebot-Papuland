@@ -14,10 +14,6 @@ class TrajectoryNode(Node):
         x0 = float(self.get_parameter('x0').value)
         y0 = float(self.get_parameter('y0').value)
         
-        # Modificación MC4: Trayectoria de línea recta de 1 metro o movimiento en curva
-        x0 = float(self.get_parameter('x0').value)
-        y0 = float(self.get_parameter('y0').value)
-        
         # SELECCIÓN DE TRAYECTORIA (Comentar/Descomentar)
         
         # OPCIÓN A: LÍNEA RECTA (1 Metro)
@@ -31,7 +27,7 @@ class TrajectoryNode(Node):
         #    (x0 + 0.50, y0 + 0.25),
         #    (x0 + 0.75, y0 + 0.5625),
         #    (x0 + 1.00, y0 + 1.00)
-        ]
+        #]
         
         self.current_index = 0
         self.last_flag = False 

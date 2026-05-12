@@ -40,10 +40,13 @@ class LocalisationNode(Node):
         self.angle_r = 0.0
         self.angle_l = 0.0
 
-        # MINICHALLENGE 4: Inicialización de Covarianza y Constantes de Ruido
+        # MINICHALLENGE 4: Inicialización de Covarianza y Matriz Q Constante
         self.P = np.zeros((3, 3)) # Matriz de covarianza Sigma_k (3x3)
-        self.kr = 10  # Valor semilla "inventado". SE CAMBIA TRAS EXPERIMENTO FÍSICO.
-        self.kl = 10  # Valor semilla "inventado".
+        
+        # Estos valores se actualizan con lo que imprima varianza.py
+        self.A = 0.0005  # Varianza lineal
+        self.C = 0.0010  # Varianza angular
+        self.B = 0.0     # Covarianza cruzada
 
         self.create_subscription(Float32, 'wr', self.wr_callback, 10)
         self.create_subscription(Float32, 'wl', self.wl_callback, 10)
@@ -59,9 +62,6 @@ class LocalisationNode(Node):
     def wl_callback(self, msg): self.wl = msg.data
 
     def update_covariance(self, v, dt):
-
-        # MINICHALLENGE 4: Propagación de Incertidumbre
-        
         # 1. Jacobiano H_k
         J_h = np.array([
             [1.0, 0.0, -v * dt * math.sin(self.theta)],
@@ -69,19 +69,12 @@ class LocalisationNode(Node):
             [0.0, 0.0,  1.0]
         ])
 
-        # 2. Matriz de ruido Q_k
-        Sigma_delta = np.array([
-            [self.kr * abs(self.wr), 0.0],
-            [0.0, self.kl * abs(self.wl)]
+        # 2. Matriz de ruido Q_k constante (del pizarrón)
+        Q = np.array([
+            [self.A, self.B, self.B],
+            [self.B, self.A, self.B],
+            [self.B, self.B, self.C]
         ])
-        
-        nabla_w = 0.5 * self.r * dt * np.array([
-            [math.cos(self.theta), math.cos(self.theta)],
-            [math.sin(self.theta), math.sin(self.theta)],
-            [2.0/self.l, -2.0/self.l]
-        ])
-        
-        Q = nabla_w @ Sigma_delta @ nabla_w.T
 
         # 3. Actualización de P (Sigma_k)
         self.P = J_h @ self.P @ J_h.T + Q
