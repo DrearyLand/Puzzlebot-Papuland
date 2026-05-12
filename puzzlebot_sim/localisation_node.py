@@ -70,11 +70,16 @@ class LocalisationNode(Node):
         ])
 
         # 2. Matriz de ruido Q_k constante (del pizarrón)
-        Q = np.array([
+        Q_base = np.array([
             [self.A, self.B, self.B],
             [self.B, self.A, self.B],
             [self.B, self.B, self.C]
         ])
+
+        # Escalar Q por la distancia que avanzó en este instante
+        # cuando sume 1 metro completo, el error acumulado será exactamente self.A y self.C
+        distancia_paso = abs(v) * dt
+        Q = Q_base * distancia_paso
 
         # 3. Actualización de P (Sigma_k)
         self.P = J_h @ self.P @ J_h.T + Q
