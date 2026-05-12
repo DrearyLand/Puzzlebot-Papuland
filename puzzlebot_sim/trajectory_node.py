@@ -21,16 +21,16 @@ class TrajectoryNode(Node):
         # SELECCIÓN DE TRAYECTORIA (Comentar/Descomentar)
         
         # OPCIÓN A: LÍNEA RECTA (1 Metro)
-        # self.points = [
-        #     (x0 + 1.0, y0)
-        # ]
+        self.points = [
+            (x0 + 1.0, y0)
+        ]
 
         # OPCIÓN B: TRAYECTORIA PARABÓLICA (y = x^2)
-        self.points = [
-            (x0 + 0.25, y0 + 0.0625),
-            (x0 + 0.50, y0 + 0.25),
-            (x0 + 0.75, y0 + 0.5625),
-            (x0 + 1.00, y0 + 1.00)
+        #self.points = [
+        #    (x0 + 0.25, y0 + 0.0625),
+        #    (x0 + 0.50, y0 + 0.25),
+        #    (x0 + 0.75, y0 + 0.5625),
+        #    (x0 + 1.00, y0 + 1.00)
         ]
         
         self.current_index = 0
