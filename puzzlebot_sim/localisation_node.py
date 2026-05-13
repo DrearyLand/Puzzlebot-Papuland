@@ -44,9 +44,9 @@ class LocalisationNode(Node):
         self.P = np.zeros((3, 3)) # Matriz de covarianza Sigma_k (3x3)
         
         # Valores estáticos de error basados en el script varianza.py
-        self.var_x = 0.0050  # Varianza longitudinal
-        self.var_y = 0.0002  # Varianza lateral
-        self.C = 0.0010      # Varianza angular
+        self.var_x = 0.0005  # Varianza longitudinal
+        self.var_y = 0.0001  # Varianza lateral
+        self.C = 0.010      # Varianza angular
         self.B = 0.0         # Covarianza cruzada
 
         self.create_subscription(Float32, 'wr', self.wr_callback, 10)
