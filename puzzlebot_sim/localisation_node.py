@@ -40,13 +40,14 @@ class LocalisationNode(Node):
         self.angle_r = 0.0
         self.angle_l = 0.0
 
-        # MINICHALLENGE 4: Inicialización de Covarianza y Matriz Q Constante
+        # MINICHALLENGE 4: Inicialización de Covarianza
         self.P = np.zeros((3, 3)) # Matriz de covarianza Sigma_k (3x3)
         
-        # Estos valores se actualizan con lo que imprima varianza.py
-        self.A = 0.0005  # Varianza lineal
-        self.C = 0.0010  # Varianza angular
-        self.B = 0.0     # Covarianza cruzada
+        # Valores estáticos de error basados en el script varianza.py
+        self.var_x = 0.0050  # Varianza longitudinal
+        self.var_y = 0.0002  # Varianza lateral
+        self.C = 0.0010      # Varianza angular
+        self.B = 0.0         # Covarianza cruzada
 
         self.create_subscription(Float32, 'wr', self.wr_callback, 10)
         self.create_subscription(Float32, 'wl', self.wl_callback, 10)
@@ -69,15 +70,14 @@ class LocalisationNode(Node):
             [0.0, 0.0,  1.0]
         ])
 
-        # 2. Matriz de ruido Q_k constante (del pizarrón)
+        # 2. Matriz de ruido Q_base con ejes separados
         Q_base = np.array([
-            [self.A, self.B, self.B],
-            [self.B, self.A, self.B],
+            [self.var_x, self.B, self.B],
+            [self.B, self.var_y, self.B],
             [self.B, self.B, self.C]
         ])
 
-        # Escalar Q por la distancia que avanzó en este instante
-        # cuando sume 1 metro completo, el error acumulado será exactamente self.A y self.C
+        # Escalar Q por la distancia para propagación acumulativa correcta
         distancia_paso = abs(v) * dt
         Q = Q_base * distancia_paso
 
@@ -88,7 +88,7 @@ class LocalisationNode(Node):
         v = self.r * (self.wr + self.wl) / 2.0
         w = self.r * (self.wr - self.wl) / self.l
         
-        # Actualizamos la matemática de la elipse ANTES de mover al robot
+        # Actualizamos la matemática de la elipse
         self.update_covariance(v, self.dt)
         
         self.x += v * math.cos(self.theta) * self.dt
