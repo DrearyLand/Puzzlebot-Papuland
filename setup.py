@@ -18,6 +18,7 @@ setup(
         (os.path.join('share', package_name, 'meshes'), glob(os.path.join('meshes', '*.stl'))),
         (os.path.join('share', package_name, 'urdf'), glob(os.path.join('urdf', '*.urdf'))),
         (os.path.join('share', package_name, 'urdf'), glob(os.path.join('urdf', '*.xacro'))),
+        (os.path.join('share', package_name, 'worlds'), glob(os.path.join('worlds', '*.world'))),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -36,7 +37,9 @@ setup(
             'sim_node = puzzlebot_sim.puzzlebot_sim_node:main',
             'loc_node = puzzlebot_sim.localisation_node:main',
             'ctrl_node = puzzlebot_sim.control_node:main',
-            'traj_node = puzzlebot_sim.trajectory_node:main'
+            'traj_node = puzzlebot_sim.trajectory_node:main',
+            'bug0_node = puzzlebot_sim.bug0_node:main',
+            'bug2_node = puzzlebot_sim.bug2_node:main',
         ],
     },
 )
