@@ -27,33 +27,28 @@ def generate_launch_description():
             parameters=[{'robot_description': robot_desc, 'frame_prefix': [robot_name, '/']}]
         ),
         
-        # --- NODOS COMENTADOS (No se usan en Bug 0) ---
-        # Node(
-        #     package='puzzlebot_sim',
-        #     executable='sim_node',
-        #     name='puzzlebot_sim_node',
-        #     parameters=[{'x0': x0, 'y0': y0}]
-        # ),
-        # Node(
-        #     package='puzzlebot_sim',
-        #     executable='ctrl_node',
-        #     name='control_node'
-        # ),
-        # Node(
-        #     package='puzzlebot_sim',
-        #     executable='traj_node',
-        #     name='trajectory_node',
-        #     parameters=[{'x0': x0, 'y0': y0}]
-        # ),
+        # --- NODO INYECTOR PARA GAZEBO ---
+        Node(
+            package='gazebo_ros',
+            executable='spawn_entity.py',
+            name='urdf_spawner',
+            output='screen',
+            arguments=[
+                '-topic', 'robot_description', 
+                '-entity', robot_name, 
+                '-x', x0, 
+                '-y', y0, 
+                '-z', '0.15' # Altura inicial para evitar colisión con el suelo
+            ]
+        ),
 
-        # --- NODOS ACTIVOS PARA ESTE RETO ---
         Node(
             package='puzzlebot_sim',
             executable='loc_node',
             name='localisation_node',
             parameters=[{'x0': x0, 'y0': y0}]
         ),
-        # AGREGAMOS EL CEREBRO DE BUG 0
+        
         Node(
             package='puzzlebot_sim',
             executable='bug0_node',
@@ -63,7 +58,6 @@ def generate_launch_description():
     ])
 
     return LaunchDescription([
-        # Valores por defecto añadidos para evitar errores
         DeclareLaunchArgument('robot_name', default_value='robot1'),
         DeclareLaunchArgument('x0', default_value='0.0'),
         DeclareLaunchArgument('y0', default_value='0.0'),
