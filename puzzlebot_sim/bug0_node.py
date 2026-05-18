@@ -23,7 +23,7 @@ class Bug0Node(Node):
         self.theta = 0.0
         
         # Meta a alcanzar (Target Position)
-        self.target_x = 4.0
+        self.target_x = 8.0
         self.target_y = 0.0
         
         # LiDAR - Regiones divididas para entender el entorno
@@ -42,9 +42,9 @@ class Bug0Node(Node):
         self.d_thresh = 0.4  # A qué distancia considera que hay un obstáculo
         
         # Suscriptores y publicadores
-        self.create_subscription(Odometry, 'odom', self.odom_callback, 10)
-        self.create_subscription(LaserScan, 'scan', self.scan_callback, 10)
-        self.cmd_pub = self.create_publisher(Twist, 'cmd_vel', 10)
+        self.create_subscription(Odometry, '/odom', self.odom_callback, 10)
+        self.create_subscription(LaserScan, '/scan', self.scan_callback, 10)
+        self.cmd_pub = self.create_publisher(Twist, '/cmd_vel', 10)
         
         # Bucle de control principal (10 Hz)
         self.create_timer(0.1, self.control_loop)
