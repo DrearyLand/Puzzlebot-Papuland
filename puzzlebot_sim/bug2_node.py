@@ -26,7 +26,7 @@ class Bug2Node(Node):
         self.start_recorded = False
         
         # Meta a alcanzar en nuevomaze.world
-        self.target_x = 4.0
+        self.target_x = 8.0
         self.target_y = 0.0
         
         # Variables de estado para Bug 2
