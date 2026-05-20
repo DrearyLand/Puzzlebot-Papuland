@@ -54,10 +54,20 @@ def generate_launch_description():
         condition=IfCondition(PythonExpression(["'", algo, "' == 'bug2'"]))
     )
 
+    # 5. NODO DE RVIZ2 (Sincronizado con el tiempo de Gazebo)
+    rviz_node = Node(
+        package='rviz2',
+        executable='rviz2',
+        name='rviz2',
+        output='screen',
+        parameters=[{'use_sim_time': True}] # ESTA LÍNEA DESCONGELA EL MOVIMIENTO EN RVIZ
+    )
+
     return LaunchDescription([
         algo_arg,
         gazebo,
         spawn_robot,
         bug0_node,
-        bug2_node
+        bug2_node,
+        rviz_node
     ])

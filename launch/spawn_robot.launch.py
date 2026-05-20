@@ -16,7 +16,6 @@ def generate_launch_description():
     x0 = LaunchConfiguration('x0')
     y0 = LaunchConfiguration('y0')
 
-    # Todos los nodos obedecerán a este Namespace
     robot_group = GroupAction([
         PushRosNamespace(robot_name),
 
@@ -24,10 +23,14 @@ def generate_launch_description():
             package='robot_state_publisher',
             executable='robot_state_publisher',
             name='robot_state_publisher',
-            parameters=[{'robot_description': robot_desc, 'frame_prefix': [robot_name, '/']}]
+            parameters=[{
+                'robot_description': robot_desc, 
+                'use_sim_time': True
+            }],
+            # ESTE TÚNEL CONECTA LAS LLANTAS DE GAZEBO CON RVIZ
+            remappings=[('joint_states', '/joint_states')] 
         ),
         
-        # --- NODO INYECTOR PARA GAZEBO ---
         Node(
             package='gazebo_ros',
             executable='spawn_entity.py',
@@ -38,7 +41,7 @@ def generate_launch_description():
                 '-entity', robot_name, 
                 '-x', x0, 
                 '-y', y0, 
-                '-z', '0.15' # Altura inicial para evitar colisión con el suelo
+                '-z', '0.15'
             ]
         ),
 
@@ -47,13 +50,6 @@ def generate_launch_description():
             executable='loc_node',
             name='localisation_node',
             parameters=[{'x0': x0, 'y0': y0}]
-        ),
-        
-        Node(
-            package='puzzlebot_sim',
-            executable='bug0_node',
-            name='bug0_node',
-            output='screen'
         )
     ])
 
