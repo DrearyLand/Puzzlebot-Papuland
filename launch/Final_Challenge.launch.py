@@ -21,7 +21,7 @@ def generate_launch_description():
     algo = LaunchConfiguration('algo')
 
     # CAMBIO: Ahora apuntamos al mundo oficial de MCR2
-    world_file = os.path.join(pkg_puzzlebot_gazebo, 'worlds', 'mcr2_challenge.world') # Asegúrate de poner el nombre exacto del archivo .world que te dieron
+    world_file = os.path.join(pkg_puzzlebot_gazebo, 'worlds', 'puzzlebot_arena_markers.world') # Asegúrate de poner el nombre exacto del archivo .world que te dieron
     
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -34,7 +34,7 @@ def generate_launch_description():
     # En lugar de usar tu spawn_robot local, llamaremos al que viene en el description
     spawn_robot = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            os.path.join(pkg_puzzlebot_gazebo, 'launch', 'puzzlebot_spawner.launch.py') # Verifica el nombre exacto de este launch en la carpeta oficial
+            os.path.join(pkg_puzzlebot_gazebo, 'launch', 'robot_state_publisher_launch.py') # Verifica el nombre exacto de este launch en la carpeta oficial
         ),
         launch_arguments={'x_pose': '0.0', 'y_pose': '0.0'}.items()
     )
