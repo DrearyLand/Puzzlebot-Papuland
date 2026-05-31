@@ -1,0 +1,124 @@
+[0.000000] (-) TimerEvent: {}
+[0.000983] (puzzlebot_sim) JobQueued: {'identifier': 'puzzlebot_sim', 'dependencies': OrderedDict()}
+[0.001024] (puzzlebot_sim) JobStarted: {'identifier': 'puzzlebot_sim'}
+[0.099845] (-) TimerEvent: {}
+[0.200271] (-) TimerEvent: {}
+[0.300967] (-) TimerEvent: {}
+[0.403545] (-) TimerEvent: {}
+[0.504737] (-) TimerEvent: {}
+[0.606727] (-) TimerEvent: {}
+[0.707005] (-) TimerEvent: {}
+[0.807371] (-) TimerEvent: {}
+[0.908112] (-) TimerEvent: {}
+[1.008484] (-) TimerEvent: {}
+[1.109006] (-) TimerEvent: {}
+[1.209637] (-) TimerEvent: {}
+[1.312213] (-) TimerEvent: {}
+[1.413291] (-) TimerEvent: {}
+[1.514433] (puzzlebot_sim) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', 'build/puzzlebot_sim', 'build', '--build-base', '/home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build', 'install', '--record', '/home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/jp/ros2_ws/src/puzzlebot_sim', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'jp', 'LC_TIME': 'es_MX.UTF-8', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LIBGL_ALWAYS_SOFTWARE': '1', 'LD_LIBRARY_PATH': '/home/jp/ros2_ws/install/yolo_msgs/lib:/home/jp/ros2_ws/install/my_interfaces/lib:/home/jp/ros2_utilities_ws/install/micro_ros_agent/lib:/home/jp/ros2_utilities_ws/install/micro_ros_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/jp', 'OLDPWD': '/home/jp/ros2_ws/src/puzzlebot_sim', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'es_MX.UTF-8', 'SYSTEMD_EXEC_PID': '1439', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', '_colcon_cd_root': '/opt/ros/humble/', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/jp/ros2_utilities_ws/install:/home/jp/ros2_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'jp', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'jp', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/jp/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/jp-virtual-machine:@/tmp/.ICE-unix/1414,unix/jp-virtual-machine:/tmp/.ICE-unix/1414', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'es_MX.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/5ed5312c_4be5_4093_8d31_72a414c68ddc', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'es_MX.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.UK1AQ3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.146', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/jp/ros2_ws/install/yolov8_ros2:/home/jp/ros2_ws/install/yolo_msgs:/home/jp/ros2_ws/install/turtle_controller:/home/jp/ros2_ws/install/tf_examples:/home/jp/ros2_ws/install/puzzlebot_sim:/home/jp/ros2_ws/install/puzzlebot_gazebo:/home/jp/ros2_ws/install/puzzlebot_description:/home/jp/ros2_ws/install/my_opencv_demo:/home/jp/ros2_ws/install/basics_comm:/home/jp/ros2_ws/install/my_interfaces:/home/jp/ros2_ws/install/mobile_robotics:/home/jp/ros2_ws/install/joints_act:/home/jp/ros2_ws/install/courseworks:/home/jp/ros2_utilities_ws/install/micro_ros_setup:/home/jp/ros2_utilities_ws/install/micro_ros_agent:/home/jp/ros2_utilities_ws/install/micro_ros_msgs:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'es_MX.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'es_MX.UTF-8', 'LC_IDENTIFICATION': 'es_MX.UTF-8', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim', 'TURTLEBOT3_MODEL': 'waffle', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages:/home/jp/ros2_ws/install/yolov8_ros2/lib/python3.10/site-packages:/home/jp/ros2_ws/install/yolo_msgs/local/lib/python3.10/dist-packages:/home/jp/ros2_ws/install/turtle_controller/lib/python3.10/site-packages:/home/jp/ros2_ws/install/tf_examples/lib/python3.10/site-packages:/home/jp/ros2_ws/install/puzzlebot_sim/lib/python3.10/site-packages:/home/jp/ros2_ws/install/puzzlebot_gazebo/lib/python3.10/site-packages:/home/jp/ros2_ws/install/puzzlebot_description/lib/python3.10/site-packages:/home/jp/ros2_ws/install/my_opencv_demo/lib/python3.10/site-packages:/home/jp/ros2_ws/install/basics_comm/lib/python3.10/site-packages:/home/jp/ros2_ws/install/my_interfaces/local/lib/python3.10/dist-packages:/home/jp/ros2_ws/install/mobile_robotics/lib/python3.10/site-packages:/home/jp/ros2_ws/install/joints_act/lib/python3.10/site-packages:/home/jp/ros2_ws/install/courseworks/lib/python3.10/site-packages:/home/jp/ros2_utilities_ws/install/micro_ros_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'es_MX.UTF-8', 'LC_PAPER': 'es_MX.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/home/jp/ros2_ws/install/yolo_msgs:/home/jp/ros2_ws/install/my_interfaces:/home/jp/ros2_utilities_ws/install/micro_ros_setup:/home/jp/ros2_utilities_ws/install/micro_ros_agent:/home/jp/ros2_utilities_ws/install/micro_ros_msgs'}, 'shell': False}
+[1.515798] (-) TimerEvent: {}
+[1.616294] (-) TimerEvent: {}
+[1.716773] (-) TimerEvent: {}
+[1.819190] (-) TimerEvent: {}
+[1.920068] (-) TimerEvent: {}
+[1.945754] (puzzlebot_sim) StdoutLine: {'line': b'running egg_info\n'}
+[1.947496] (puzzlebot_sim) StdoutLine: {'line': b'creating build/puzzlebot_sim/puzzlebot_sim.egg-info\n'}
+[1.947639] (puzzlebot_sim) StdoutLine: {'line': b'writing build/puzzlebot_sim/puzzlebot_sim.egg-info/PKG-INFO\n'}
+[1.947695] (puzzlebot_sim) StdoutLine: {'line': b'writing dependency_links to build/puzzlebot_sim/puzzlebot_sim.egg-info/dependency_links.txt\n'}
+[1.948916] (puzzlebot_sim) StdoutLine: {'line': b'writing entry points to build/puzzlebot_sim/puzzlebot_sim.egg-info/entry_points.txt\n'}
+[1.949070] (puzzlebot_sim) StdoutLine: {'line': b'writing requirements to build/puzzlebot_sim/puzzlebot_sim.egg-info/requires.txt\n'}
+[1.949179] (puzzlebot_sim) StdoutLine: {'line': b'writing top-level names to build/puzzlebot_sim/puzzlebot_sim.egg-info/top_level.txt\n'}
+[1.949261] (puzzlebot_sim) StdoutLine: {'line': b"writing manifest file 'build/puzzlebot_sim/puzzlebot_sim.egg-info/SOURCES.txt'\n"}
+[1.951920] (puzzlebot_sim) StdoutLine: {'line': b"reading manifest file 'build/puzzlebot_sim/puzzlebot_sim.egg-info/SOURCES.txt'\n"}
+[1.952782] (puzzlebot_sim) StdoutLine: {'line': b"writing manifest file 'build/puzzlebot_sim/puzzlebot_sim.egg-info/SOURCES.txt'\n"}
+[1.953153] (puzzlebot_sim) StdoutLine: {'line': b'running build\n'}
+[1.953821] (puzzlebot_sim) StdoutLine: {'line': b'running build_py\n'}
+[1.954327] (puzzlebot_sim) StdoutLine: {'line': b'creating /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build\n'}
+[1.954519] (puzzlebot_sim) StdoutLine: {'line': b'creating /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib\n'}
+[1.955490] (puzzlebot_sim) StdoutLine: {'line': b'creating /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim\n'}
+[1.955908] (puzzlebot_sim) StdoutLine: {'line': b'copying puzzlebot_sim/varianza.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim\n'}
+[1.956060] (puzzlebot_sim) StdoutLine: {'line': b'copying puzzlebot_sim/bug0_FC_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim\n'}
+[1.956691] (puzzlebot_sim) StdoutLine: {'line': b'copying puzzlebot_sim/control_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim\n'}
+[1.956920] (puzzlebot_sim) StdoutLine: {'line': b'copying puzzlebot_sim/bug1_FC_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim\n'}
+[1.957523] (puzzlebot_sim) StdoutLine: {'line': b'copying puzzlebot_sim/trajectory_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim\n'}
+[1.958145] (puzzlebot_sim) StdoutLine: {'line': b'copying puzzlebot_sim/bug2_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim\n'}
+[1.958310] (puzzlebot_sim) StdoutLine: {'line': b'copying puzzlebot_sim/Minichallenge1.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim\n'}
+[1.958701] (puzzlebot_sim) StdoutLine: {'line': b'copying puzzlebot_sim/puzzlebot_sim_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim\n'}
+[1.959167] (puzzlebot_sim) StdoutLine: {'line': b'copying puzzlebot_sim/__init__.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim\n'}
+[1.959309] (puzzlebot_sim) StdoutLine: {'line': b'copying puzzlebot_sim/bug2_FC_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim\n'}
+[1.959449] (puzzlebot_sim) StdoutLine: {'line': b'copying puzzlebot_sim/localisation_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim\n'}
+[1.959869] (puzzlebot_sim) StdoutLine: {'line': b'copying puzzlebot_sim/bug0_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim\n'}
+[1.960372] (puzzlebot_sim) StdoutLine: {'line': b'running install\n'}
+[1.960856] (puzzlebot_sim) StdoutLine: {'line': b'running install_lib\n'}
+[1.963138] (puzzlebot_sim) StdoutLine: {'line': b'creating /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim\n'}
+[1.963290] (puzzlebot_sim) StdoutLine: {'line': b'copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/varianza.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim\n'}
+[1.963504] (puzzlebot_sim) StdoutLine: {'line': b'copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/bug0_FC_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim\n'}
+[1.963683] (puzzlebot_sim) StdoutLine: {'line': b'copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/control_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim\n'}
+[1.963883] (puzzlebot_sim) StdoutLine: {'line': b'copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/bug1_FC_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim\n'}
+[1.964093] (puzzlebot_sim) StdoutLine: {'line': b'copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/trajectory_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim\n'}
+[1.964150] (puzzlebot_sim) StdoutLine: {'line': b'copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/bug2_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim\n'}
+[1.964201] (puzzlebot_sim) StdoutLine: {'line': b'copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/Minichallenge1.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim\n'}
+[1.964250] (puzzlebot_sim) StdoutLine: {'line': b'copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/puzzlebot_sim_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim\n'}
+[1.964309] (puzzlebot_sim) StdoutLine: {'line': b'copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/__init__.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim\n'}
+[1.964403] (puzzlebot_sim) StdoutLine: {'line': b'copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/bug2_FC_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim\n'}
+[1.964601] (puzzlebot_sim) StdoutLine: {'line': b'copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/localisation_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim\n'}
+[1.964654] (puzzlebot_sim) StdoutLine: {'line': b'copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/bug0_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim\n'}
+[1.964724] (puzzlebot_sim) StdoutLine: {'line': b'byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/varianza.py to varianza.cpython-310.pyc\n'}
+[1.965061] (puzzlebot_sim) StdoutLine: {'line': b'byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/bug0_FC_node.py to bug0_FC_node.cpython-310.pyc\n'}
+[1.966920] (puzzlebot_sim) StdoutLine: {'line': b'byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/control_node.py to control_node.cpython-310.pyc\n'}
+[1.967919] (puzzlebot_sim) StdoutLine: {'line': b'byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/bug1_FC_node.py to bug1_FC_node.cpython-310.pyc\n'}
+[1.968151] (puzzlebot_sim) StdoutLine: {'line': b'byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/trajectory_node.py to trajectory_node.cpython-310.pyc\n'}
+[1.968893] (puzzlebot_sim) StdoutLine: {'line': b'byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/bug2_node.py to bug2_node.cpython-310.pyc\n'}
+[1.970850] (puzzlebot_sim) StdoutLine: {'line': b'byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/Minichallenge1.py to Minichallenge1.cpython-310.pyc\n'}
+[1.971714] (puzzlebot_sim) StdoutLine: {'line': b'byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/puzzlebot_sim_node.py to puzzlebot_sim_node.cpython-310.pyc\n'}
+[1.973519] (puzzlebot_sim) StdoutLine: {'line': b'byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/__init__.py to __init__.cpython-310.pyc\n'}
+[1.973840] (puzzlebot_sim) StdoutLine: {'line': b'byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/bug2_FC_node.py to bug2_FC_node.cpython-310.pyc\n'}
+[1.974053] (puzzlebot_sim) StdoutLine: {'line': b'byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/localisation_node.py to localisation_node.cpython-310.pyc\n'}
+[1.975487] (puzzlebot_sim) StdoutLine: {'line': b'byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/bug0_node.py to bug0_node.cpython-310.pyc\n'}
+[1.976603] (puzzlebot_sim) StdoutLine: {'line': b'running install_data\n'}
+[1.976824] (puzzlebot_sim) StdoutLine: {'line': b'creating /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/ament_index\n'}
+[1.977031] (puzzlebot_sim) StdoutLine: {'line': b'creating /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/ament_index/resource_index\n'}
+[1.977261] (puzzlebot_sim) StdoutLine: {'line': b'creating /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/ament_index/resource_index/packages\n'}
+[1.977337] (puzzlebot_sim) StdoutLine: {'line': b'copying resource/puzzlebot_sim -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/ament_index/resource_index/packages\n'}
+[1.977498] (puzzlebot_sim) StdoutLine: {'line': b'copying package.xml -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim\n'}
+[1.977706] (puzzlebot_sim) StdoutLine: {'line': b'creating /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/launch\n'}
+[1.977875] (puzzlebot_sim) StdoutLine: {'line': b'copying launch/mc5_master.launch.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/launch\n'}
+[1.978011] (puzzlebot_sim) StdoutLine: {'line': b'copying launch/multi_robot.launch.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/launch\n'}
+[1.978168] (puzzlebot_sim) StdoutLine: {'line': b'copying launch/Final_Challenge.launch.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/launch\n'}
+[1.978336] (puzzlebot_sim) StdoutLine: {'line': b'copying launch/mc3.launch.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/launch\n'}
+[1.978655] (puzzlebot_sim) StdoutLine: {'line': b'copying launch/mc4.launch.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/launch\n'}
+[1.978804] (puzzlebot_sim) StdoutLine: {'line': b'copying launch/puzzlebot.launch.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/launch\n'}
+[1.978936] (puzzlebot_sim) StdoutLine: {'line': b'copying launch/spawn_robot.launch.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/launch\n'}
+[1.979175] (puzzlebot_sim) StdoutLine: {'line': b'creating /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/config\n'}
+[1.979377] (puzzlebot_sim) StdoutLine: {'line': b'creating /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/rviz\n'}
+[1.979439] (puzzlebot_sim) StdoutLine: {'line': b'copying rviz/PuzzlebotConfig.rviz -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/rviz\n'}
+[2.020379] (-) TimerEvent: {}
+[2.064319] (puzzlebot_sim) StdoutLine: {'line': b'creating /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/meshes\n'}
+[2.064539] (puzzlebot_sim) StdoutLine: {'line': b'copying meshes/Puzzlebot_Jetson_Lidar_Edition_Base.stl -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/meshes\n'}
+[2.120568] (-) TimerEvent: {}
+[2.221241] (-) TimerEvent: {}
+[2.322683] (-) TimerEvent: {}
+[2.423443] (-) TimerEvent: {}
+[2.476140] (puzzlebot_sim) StdoutLine: {'line': b'copying meshes/Puzzlebot_Caster_Wheel.stl -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/meshes\n'}
+[2.476424] (puzzlebot_sim) StdoutLine: {'line': b'copying meshes/Puzzlebot_Wheel.stl -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/meshes\n'}
+[2.476680] (puzzlebot_sim) StdoutLine: {'line': b'creating /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/urdf\n'}
+[2.476875] (puzzlebot_sim) StdoutLine: {'line': b'copying urdf/puzzlebot.urdf -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/urdf\n'}
+[2.514307] (puzzlebot_sim) StdoutLine: {'line': b'creating /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/worlds\n'}
+[2.514730] (puzzlebot_sim) StdoutLine: {'line': b'copying worlds/nuevomaze.world -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/worlds\n'}
+[2.515080] (puzzlebot_sim) StdoutLine: {'line': b'copying worlds/bug0_test.world -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/worlds\n'}
+[2.515371] (puzzlebot_sim) StdoutLine: {'line': b'running install_egg_info\n'}
+[2.517844] (puzzlebot_sim) StdoutLine: {'line': b'Copying build/puzzlebot_sim/puzzlebot_sim.egg-info to /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim-0.0.0-py3.10.egg-info\n'}
+[2.518900] (puzzlebot_sim) StdoutLine: {'line': b'running install_scripts\n'}
+[2.523995] (-) TimerEvent: {}
+[2.543022] (puzzlebot_sim) StdoutLine: {'line': b'Installing Minichallenge1 script to /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/puzzlebot_sim\n'}
+[2.543380] (puzzlebot_sim) StdoutLine: {'line': b'Installing bug0_FC_node = puzzlebot_sim.bug0_FC_node:mainbug1_FC_node = puzzlebot_sim.bug1_FC_node:mainbug2_FC_node script to /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/puzzlebot_sim\n'}
+[2.543670] (puzzlebot_sim) StdoutLine: {'line': b'Installing bug0_node script to /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/puzzlebot_sim\n'}
+[2.543893] (puzzlebot_sim) StdoutLine: {'line': b'Installing bug2_node script to /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/puzzlebot_sim\n'}
+[2.544126] (puzzlebot_sim) StdoutLine: {'line': b'Installing ctrl_node script to /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/puzzlebot_sim\n'}
+[2.544390] (puzzlebot_sim) StdoutLine: {'line': b'Installing loc_node script to /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/puzzlebot_sim\n'}
+[2.544605] (puzzlebot_sim) StdoutLine: {'line': b'Installing sim_node script to /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/puzzlebot_sim\n'}
+[2.546083] (puzzlebot_sim) StdoutLine: {'line': b'Installing traj_node script to /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/puzzlebot_sim\n'}
+[2.546184] (puzzlebot_sim) StdoutLine: {'line': b"writing list of installed files to '/home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/install.log'\n"}
+[2.567563] (puzzlebot_sim) CommandEnded: {'returncode': 0}
+[2.602552] (puzzlebot_sim) JobEnded: {'identifier': 'puzzlebot_sim', 'rc': 0}
+[2.603418] (-) EventReactorShutdown: {}

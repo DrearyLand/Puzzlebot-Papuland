@@ -1,0 +1,91 @@
+[0.636s] [34mcolcon[0m [1;30mDEBUG[0m [32mCommand line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'puzzlebot_sim'][0m
+[0.636s] [34mcolcon[0m [1;30mDEBUG[0m [32mParsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=6, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['puzzlebot_sim'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x712d591232b0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x712d5926c7c0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x712d5926c7c0>>)[0m
+[4.987s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) check parameters
+[4.987s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) check parameters
+[4.987s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) check parameters
+[4.987s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) check parameters
+[4.987s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) discover
+[4.987s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) discover
+[4.987s] [34mcolcon.colcon_core.package_discovery[0m [1;30mINFO[0m Crawling recursively for packages in '/home/jp/ros2_ws/src/puzzlebot_sim'
+[4.988s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ignore', 'ignore_ament_install']
+[4.988s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore'
+[4.988s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore_ament_install'
+[4.988s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_pkg']
+[4.988s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_pkg'
+[4.988s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_meta']
+[4.988s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_meta'
+[4.988s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ros']
+[4.988s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ros'
+[5.036s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage '.' with type 'ros.ament_python' and name 'puzzlebot_sim'[0m
+[5.036s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) using defaults
+[5.036s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) discover
+[5.036s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) using defaults
+[5.036s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) discover
+[5.036s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) using defaults
+[5.180s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) check parameters
+[5.180s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) discover
+[5.225s] [34mcolcon.colcon_installed_package_information.package_discovery[0m [1;30mDEBUG[0m [32mFound 3 installed packages in /home/jp/ros2_utilities_ws/install[0m
+[5.227s] [34mcolcon.colcon_installed_package_information.package_discovery[0m [1;30mDEBUG[0m [32mFound 13 installed packages in /home/jp/ros2_ws/install[0m
+[5.230s] [34mcolcon.colcon_installed_package_information.package_discovery[0m [1;30mDEBUG[0m [32mFound 462 installed packages in /opt/ros/humble[0m
+[5.232s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) using defaults
+[5.447s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'puzzlebot_sim' build argument 'cmake_args' from command line to 'None'
+[5.447s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'puzzlebot_sim' build argument 'cmake_target' from command line to 'None'
+[5.447s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'puzzlebot_sim' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[5.447s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'puzzlebot_sim' build argument 'cmake_clean_cache' from command line to 'False'
+[5.447s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'puzzlebot_sim' build argument 'cmake_clean_first' from command line to 'False'
+[5.447s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'puzzlebot_sim' build argument 'cmake_force_configure' from command line to 'False'
+[5.447s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'puzzlebot_sim' build argument 'ament_cmake_args' from command line to 'None'
+[5.447s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'puzzlebot_sim' build argument 'catkin_cmake_args' from command line to 'None'
+[5.447s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'puzzlebot_sim' build argument 'catkin_skip_building_tests' from command line to 'False'
+[5.447s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'puzzlebot_sim' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim', 'merge_install': False, 'path': '/home/jp/ros2_ws/src/puzzlebot_sim', 'symlink_install': False, 'test_result_base': None}[0m
+[5.447s] [34mcolcon.colcon_core.executor[0m [1;30mINFO[0m Executing jobs using 'parallel' executor
+[5.448s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete[0m
+[5.449s] [34mcolcon.colcon_ros.task.ament_python.build[0m [1;30mINFO[0m Building ROS package in '/home/jp/ros2_ws/src/puzzlebot_sim' with build type 'ament_python'
+[5.449s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('puzzlebot_sim', 'ament_prefix_path')
+[5.467s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[5.467s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/hook/ament_prefix_path.ps1'
+[5.470s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/hook/ament_prefix_path.dsv'
+[5.482s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/hook/ament_prefix_path.sh'
+[5.484s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.484s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[5.817s] [34mcolcon.colcon_core.task.python.build[0m [1;30mINFO[0m Building Python package in '/home/jp/ros2_ws/src/puzzlebot_sim'
+[5.818s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.818s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[6.964s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/jp/ros2_ws/src/puzzlebot_sim': PYTHONPATH=/home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/puzzlebot_sim build --build-base /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build install --record /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/install.log --single-version-externally-managed install_data[0m
+[8.016s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/jp/ros2_ws/src/puzzlebot_sim' returned '0': PYTHONPATH=/home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/puzzlebot_sim build --build-base /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build install --record /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/install.log --single-version-externally-managed install_data[0m
+[8.027s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim' for CMake module files
+[8.028s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim' for CMake config files
+[8.028s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib'
+[8.029s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/bin'
+[8.029s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/pkgconfig/puzzlebot_sim.pc'
+[8.029s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages'
+[8.029s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('puzzlebot_sim', 'pythonpath')
+[8.029s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/hook/pythonpath.ps1'
+[8.030s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/hook/pythonpath.dsv'
+[8.030s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/hook/pythonpath.sh'
+[8.031s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/bin'
+[8.031s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(puzzlebot_sim)
+[8.031s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/package.ps1'
+[8.033s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/package.dsv'
+[8.034s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/package.sh'
+[8.035s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/package.bash'
+[8.037s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/package.zsh'
+[8.050s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/colcon-core/packages/puzzlebot_sim)
+[8.051s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mclosing loop[0m
+[8.051s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mloop closed[0m
+[8.051s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete finished with '0'[0m
+[8.051s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoining thread[0m
+[8.085s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[8.086s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[8.086s] [34mcolcon.colcon_notification.desktop_notification[0m [1;30mINFO[0m Sending desktop notification using 'notify2'
+[8.102s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoined thread[0m
+[8.102s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/jp/ros2_ws/src/puzzlebot_sim/install/local_setup.ps1'
+[8.104s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/home/jp/ros2_ws/src/puzzlebot_sim/install/_local_setup_util_ps1.py'
+[8.108s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/jp/ros2_ws/src/puzzlebot_sim/install/setup.ps1'
+[8.110s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/jp/ros2_ws/src/puzzlebot_sim/install/local_setup.sh'
+[8.111s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/home/jp/ros2_ws/src/puzzlebot_sim/install/_local_setup_util_sh.py'
+[8.112s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/jp/ros2_ws/src/puzzlebot_sim/install/setup.sh'
+[8.115s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/jp/ros2_ws/src/puzzlebot_sim/install/local_setup.bash'
+[8.131s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/jp/ros2_ws/src/puzzlebot_sim/install/setup.bash'
+[8.133s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/jp/ros2_ws/src/puzzlebot_sim/install/local_setup.zsh'
+[8.135s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/jp/ros2_ws/src/puzzlebot_sim/install/setup.zsh'

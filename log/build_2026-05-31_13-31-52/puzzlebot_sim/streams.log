@@ -1,0 +1,94 @@
+[1.515s] Invoking command in '/home/jp/ros2_ws/src/puzzlebot_sim': PYTHONPATH=/home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/puzzlebot_sim build --build-base /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build install --record /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/install.log --single-version-externally-managed install_data
+[1.945s] running egg_info
+[1.947s] creating build/puzzlebot_sim/puzzlebot_sim.egg-info
+[1.947s] writing build/puzzlebot_sim/puzzlebot_sim.egg-info/PKG-INFO
+[1.947s] writing dependency_links to build/puzzlebot_sim/puzzlebot_sim.egg-info/dependency_links.txt
+[1.948s] writing entry points to build/puzzlebot_sim/puzzlebot_sim.egg-info/entry_points.txt
+[1.948s] writing requirements to build/puzzlebot_sim/puzzlebot_sim.egg-info/requires.txt
+[1.948s] writing top-level names to build/puzzlebot_sim/puzzlebot_sim.egg-info/top_level.txt
+[1.948s] writing manifest file 'build/puzzlebot_sim/puzzlebot_sim.egg-info/SOURCES.txt'
+[1.951s] reading manifest file 'build/puzzlebot_sim/puzzlebot_sim.egg-info/SOURCES.txt'
+[1.952s] writing manifest file 'build/puzzlebot_sim/puzzlebot_sim.egg-info/SOURCES.txt'
+[1.953s] running build
+[1.953s] running build_py
+[1.953s] creating /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build
+[1.954s] creating /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib
+[1.955s] creating /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim
+[1.955s] copying puzzlebot_sim/varianza.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim
+[1.956s] copying puzzlebot_sim/bug0_FC_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim
+[1.956s] copying puzzlebot_sim/control_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim
+[1.956s] copying puzzlebot_sim/bug1_FC_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim
+[1.957s] copying puzzlebot_sim/trajectory_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim
+[1.957s] copying puzzlebot_sim/bug2_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim
+[1.958s] copying puzzlebot_sim/Minichallenge1.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim
+[1.958s] copying puzzlebot_sim/puzzlebot_sim_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim
+[1.958s] copying puzzlebot_sim/__init__.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim
+[1.958s] copying puzzlebot_sim/bug2_FC_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim
+[1.959s] copying puzzlebot_sim/localisation_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim
+[1.959s] copying puzzlebot_sim/bug0_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim
+[1.959s] running install
+[1.960s] running install_lib
+[1.962s] creating /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim
+[1.962s] copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/varianza.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim
+[1.963s] copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/bug0_FC_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim
+[1.963s] copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/control_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim
+[1.963s] copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/bug1_FC_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim
+[1.963s] copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/trajectory_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim
+[1.963s] copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/bug2_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim
+[1.963s] copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/Minichallenge1.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim
+[1.963s] copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/puzzlebot_sim_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim
+[1.963s] copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/__init__.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim
+[1.964s] copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/bug2_FC_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim
+[1.964s] copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/localisation_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim
+[1.964s] copying /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build/lib/puzzlebot_sim/bug0_node.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim
+[1.964s] byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/varianza.py to varianza.cpython-310.pyc
+[1.964s] byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/bug0_FC_node.py to bug0_FC_node.cpython-310.pyc
+[1.966s] byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/control_node.py to control_node.cpython-310.pyc
+[1.967s] byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/bug1_FC_node.py to bug1_FC_node.cpython-310.pyc
+[1.967s] byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/trajectory_node.py to trajectory_node.cpython-310.pyc
+[1.968s] byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/bug2_node.py to bug2_node.cpython-310.pyc
+[1.970s] byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/Minichallenge1.py to Minichallenge1.cpython-310.pyc
+[1.971s] byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/puzzlebot_sim_node.py to puzzlebot_sim_node.cpython-310.pyc
+[1.973s] byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/__init__.py to __init__.cpython-310.pyc
+[1.973s] byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/bug2_FC_node.py to bug2_FC_node.cpython-310.pyc
+[1.973s] byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/localisation_node.py to localisation_node.cpython-310.pyc
+[1.975s] byte-compiling /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/bug0_node.py to bug0_node.cpython-310.pyc
+[1.976s] running install_data
+[1.976s] creating /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/ament_index
+[1.976s] creating /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/ament_index/resource_index
+[1.976s] creating /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/ament_index/resource_index/packages
+[1.976s] copying resource/puzzlebot_sim -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/ament_index/resource_index/packages
+[1.977s] copying package.xml -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim
+[1.977s] creating /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/launch
+[1.977s] copying launch/mc5_master.launch.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/launch
+[1.977s] copying launch/multi_robot.launch.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/launch
+[1.977s] copying launch/Final_Challenge.launch.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/launch
+[1.977s] copying launch/mc3.launch.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/launch
+[1.978s] copying launch/mc4.launch.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/launch
+[1.978s] copying launch/puzzlebot.launch.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/launch
+[1.978s] copying launch/spawn_robot.launch.py -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/launch
+[1.978s] creating /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/config
+[1.978s] creating /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/rviz
+[1.978s] copying rviz/PuzzlebotConfig.rviz -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/rviz
+[2.063s] creating /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/meshes
+[2.064s] copying meshes/Puzzlebot_Jetson_Lidar_Edition_Base.stl -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/meshes
+[2.475s] copying meshes/Puzzlebot_Caster_Wheel.stl -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/meshes
+[2.475s] copying meshes/Puzzlebot_Wheel.stl -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/meshes
+[2.476s] creating /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/urdf
+[2.476s] copying urdf/puzzlebot.urdf -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/urdf
+[2.513s] creating /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/worlds
+[2.514s] copying worlds/nuevomaze.world -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/worlds
+[2.514s] copying worlds/bug0_test.world -> /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/share/puzzlebot_sim/worlds
+[2.514s] running install_egg_info
+[2.517s] Copying build/puzzlebot_sim/puzzlebot_sim.egg-info to /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim-0.0.0-py3.10.egg-info
+[2.518s] running install_scripts
+[2.542s] Installing Minichallenge1 script to /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/puzzlebot_sim
+[2.542s] Installing bug0_FC_node = puzzlebot_sim.bug0_FC_node:mainbug1_FC_node = puzzlebot_sim.bug1_FC_node:mainbug2_FC_node script to /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/puzzlebot_sim
+[2.543s] Installing bug0_node script to /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/puzzlebot_sim
+[2.543s] Installing bug2_node script to /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/puzzlebot_sim
+[2.543s] Installing ctrl_node script to /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/puzzlebot_sim
+[2.543s] Installing loc_node script to /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/puzzlebot_sim
+[2.544s] Installing sim_node script to /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/puzzlebot_sim
+[2.545s] Installing traj_node script to /home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/puzzlebot_sim
+[2.545s] writing list of installed files to '/home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/install.log'
+[2.567s] Invoked command in '/home/jp/ros2_ws/src/puzzlebot_sim' returned '0': PYTHONPATH=/home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jp/ros2_ws/src/puzzlebot_sim/install/puzzlebot_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/puzzlebot_sim build --build-base /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/build install --record /home/jp/ros2_ws/src/puzzlebot_sim/build/puzzlebot_sim/install.log --single-version-externally-managed install_data
