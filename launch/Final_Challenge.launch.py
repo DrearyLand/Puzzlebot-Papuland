@@ -17,7 +17,7 @@ def generate_launch_description():
         )
     )
 
-    # 2. Algoritmos de evasión y navegación (Bug 0 y Bug 2 c/waypoints)
+    # Algoritmos de evasión y navegación (Bug 0 y Bug 2 c/waypoints)
     bug0_node = Node(
         package='puzzlebot_sim',
         executable='bug0_FC_node',
@@ -32,7 +32,7 @@ def generate_launch_description():
         output='screen'
     )
 
-    # 3. Tu algoritmo matemático de Localización EKF
+    # Algoritmo matemático de Localización EKF
     loc_node = Node(
         package='puzzlebot_sim',
         executable='loc_node',
@@ -40,7 +40,7 @@ def generate_launch_description():
         output='screen'
     )
 
-    # 4. RVIZ2 sincronizado
+    # RVIZ2 sincronizado
     rviz_node = Node(
         package='rviz2',
         executable='rviz2',
