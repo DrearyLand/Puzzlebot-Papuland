@@ -12,15 +12,22 @@ def generate_launch_description():
             os.path.join(
                 get_package_share_directory('puzzlebot_gazebo'),
                 'launch',
-                'bringup_simulation_simple_launch.py' # <--- ¡EL NOMBRE CORREGIDO!
+                'bringup_simulation_simple_launch.py'
             )
         )
     )
 
-    # 2. Tu algoritmo de evasión y navegación (Bug 0)
+    # 2. Algoritmos de evasión y navegación (Bug 0 y Bug 2 c/waypoints)
     bug0_node = Node(
         package='puzzlebot_sim',
-        executable='bug0_node',
+        executable='bug0_FC_node',
+        name='bug0_node',
+        output='screen'
+    )
+
+    bug0_node = Node(
+        package='puzzlebot_sim',
+        executable='bug2_FC_node',
         name='bug0_node',
         output='screen'
     )
