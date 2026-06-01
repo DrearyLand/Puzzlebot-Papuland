@@ -12,7 +12,7 @@ class WaypointManager(Node):
         self.publisher_ = self.create_publisher(Pose2D, 'goal', 10)
         self.subscription = self.create_subscription(Odometry, 'odom', self.odom_callback, 10)
         
-        # RUTA DEL LABERINTO (Extraída de las "X" rojas de la libreta)
+        # RUTA DEL LABERINTO
         # Formato: (X, Y)
         self.waypoints = [
             (0.30, -1.20),  # X1: Primer pasillo, abajo al centro (Cerca del ArUco 708/F)

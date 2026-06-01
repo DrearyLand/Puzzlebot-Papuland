@@ -36,7 +36,7 @@ def generate_launch_description():
 
     common_parameters = [{'use_sim_time': False}]
 
-    # 1. CEREBRO EKF FÍSICO (Reemplaza la odometría a ciegas)
+    # 1. EKF FÍSICO
     localisation = Node(
         package=package_name,
         executable='ekf_physical_node',
