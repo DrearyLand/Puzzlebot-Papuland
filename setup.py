@@ -44,7 +44,7 @@ setup(
             'bug2_FC_node = puzzlebot_sim.bug2_FC_node:main',
             'ekf_physical_node = puzzlebot_sim.ekf_physical_node:main',
             'waypoint_manager = puzzlebot_sim.waypoint_manager:main',
-            'aruco_detection_monitor = puzzlebot_sim.aruco_detection_monitor:main',
+            'arucostatus = puzzlebot_sim.arucostatus:main',
         ],
     },
 )

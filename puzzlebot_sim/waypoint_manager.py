@@ -12,16 +12,17 @@ class WaypointManager(Node):
         self.publisher_ = self.create_publisher(Pose2D, 'goal', 10)
         self.subscription = self.create_subscription(Odometry, 'odom', self.odom_callback, 10)
         
-        # Agrega aquí la ruta deseada navegando por los pasillos (X, -Y)
+        # RUTA DEL LABERINTO (Extraída de las "X" rojas de la libreta)
+        # Formato: (X, Y)
         self.waypoints = [
-            (1.84, -0.30),  # Ejemplo: Ir a Aruco A
-            (0.90, -1.20),  # Ejemplo: Ir a Aruco B
-            (1.19, -1.21),  # Ejemplo: Ir a Aruco D
-            (0.0, 0.0)      # Regreso al inicio
+            (0.30, -1.20),  # X1: Primer pasillo, abajo al centro (Cerca del ArUco 708/F)
+            (0.90, -1.50),  # X2: Centro del laberinto (Debajo del ArUco 706/C)
+            (0.60, -2.70),  # X3: Pasillo del extremo derecho (Cerca del ArUco 75/G)
+            (2.70, -0.60),  # X4: Salida superior izquierda (Cerca del ArUco 701/H)
         ]
         
         self.current_index = 0
-        self.goal_tolerance = 0.15 
+        self.goal_tolerance = 0.20 # Tolerancia ampliada a 20cm para la vida real
         self.goal_published = False
 
     def odom_callback(self, msg):
@@ -35,7 +36,7 @@ class WaypointManager(Node):
         dist = math.sqrt((target_x - x)**2 + (target_y - y)**2)
 
         if dist < self.goal_tolerance:
-            self.get_logger().info(f'¡Waypoint {self.current_index + 1} alcanzado exitosamente!')
+            self.get_logger().info(f'¡Marca X{self.current_index + 1} alcanzada!')
             self.current_index += 1
             self.goal_published = False
 
@@ -44,7 +45,7 @@ class WaypointManager(Node):
             goal_msg.x = self.waypoints[self.current_index][0]
             goal_msg.y = self.waypoints[self.current_index][1]
             self.publisher_.publish(goal_msg)
-            self.get_logger().info(f'>>> Inyectando nuevo objetivo: X={goal_msg.x}, Y={goal_msg.y}')
+            self.get_logger().info(f'>>> Imán activado hacia X{self.current_index + 1}: X={goal_msg.x}, Y={goal_msg.y}')
             self.goal_published = True
 
 def main(args=None):
