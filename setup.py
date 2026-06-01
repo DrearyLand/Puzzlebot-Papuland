@@ -40,10 +40,10 @@ setup(
             'traj_node = puzzlebot_sim.trajectory_node:main',
             'bug0_node = puzzlebot_sim.bug0_node:main',
             'bug2_node = puzzlebot_sim.bug2_node:main',
-            'bug0_FC_node = puzzlebot_sim.bug0_FC_node:main'
-            'bug1_FC_node = puzzlebot_sim.bug1_FC_node:main'
-            'bug2_FC_node = puzzlebot_sim.bug2_FC_node:main'
-            'ekf_vision_node = puzzlebot_sim.ekf_vision_node:main'
+            'bug0_FC_node = puzzlebot_sim.bug0_FC_node:main',
+            'bug1_FC_node = puzzlebot_sim.bug1_FC_node:main',
+            'bug2_FC_node = puzzlebot_sim.bug2_FC_node:main',
+            'ekf_vision_node = puzzlebot_sim.ekf_vision_node:main',
         ],
     },
 )

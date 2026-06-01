@@ -43,16 +43,16 @@ class EKFLocalisation(Node):
         ])
 
         # 5. EL DICCIONARIO DEL MAPA ABSOLUTO 
-        # Hay que modificar las coordenadas según corresponda (están de ejemplo)
+        # Hay que modificar las coordenadas según corresponda (estas son para la simulación)
         self.aruco_map = {
-            70:  (1.0, 1.0),
-            706: (2.0, 4.0),
-            75:  (5.0, 5.0),
-            701: (6.0, 2.0),
-            703: (4.0, 1.5),
-            705: (3.0, -1.0),
-            708: (5.0, -2.0),
-            702: (1.0, -3.0)
+            0: (-1.62, 1.0),   # Físico: 70
+            1: (-0.5, 1.08),   # Físico: 706
+            2: (0.93, 1.37),   # Físico: 75
+            3: (1.56, 0.0),    # Físico: 701
+            4: (0.94, -0.33),  # Físico: 703
+            5: (-0.1, -1.07),  # Físico: 705
+            6: (0.25, -1.3),   # Físico: 708
+            7: (0.5, -1.61)    # Físico: 702
         }
 
         self.wr = 0.0

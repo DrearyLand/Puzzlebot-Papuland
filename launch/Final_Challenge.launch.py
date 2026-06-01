@@ -6,7 +6,9 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
 
 def generate_launch_description():
-    # 1. Llamamos al simulador oficial de MCR2 usando el nombre REAL del archivo
+    mi_paquete_dir = get_package_share_directory('puzzlebot_sim')
+    mi_mundo = os.path.join(mi_paquete_dir, 'worlds', 'nuevomaze.world')
+
     mcr2_sim = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(
@@ -14,10 +16,23 @@ def generate_launch_description():
                 'launch',
                 'bringup_simulation_simple_launch.py'
             )
-        )
+        ),
+        launch_arguments={'world': mi_mundo}.items()
     )
 
-    # Algoritmos de evasión y navegación (Bug 0 y Bug 2 c/waypoints)
+    # 3. Nodo de Visión Manchester
+    aruco_tracker_node = Node(
+        package='aruco_opencv',
+        executable='aruco_tracker_autostart',
+        name='aruco_tracker',
+        output='screen',
+        parameters=[{
+            'cam_base_topic': 'camera',
+            'marker_size': 0.14
+        }]
+    )
+
+    # 4. Bug 0
     bug0_node = Node(
         package='puzzlebot_sim',
         executable='bug0_FC_node',
@@ -25,22 +40,15 @@ def generate_launch_description():
         output='screen'
     )
 
-    bug0_node = Node(
+    # 5. Nodo EKF
+    ekf_node = Node(
         package='puzzlebot_sim',
-        executable='bug2_FC_node',
-        name='bug0_node',
+        executable='ekf_vision_node',
+        name='ekf_vision_node',
         output='screen'
     )
 
-    # Algoritmo matemático de Localización EKF
-    loc_node = Node(
-        package='puzzlebot_sim',
-        executable='loc_node',
-        name='localisation_node',
-        output='screen'
-    )
-
-    # RVIZ2 sincronizado
+    # 6. RVIZ2
     rviz_node = Node(
         package='rviz2',
         executable='rviz2',
@@ -51,7 +59,8 @@ def generate_launch_description():
 
     return LaunchDescription([
         mcr2_sim,
+        aruco_tracker_node,
         bug0_node,
-        loc_node,
+        ekf_node,
         rviz_node
     ])
