@@ -38,9 +38,10 @@ def generate_launch_description():
     aruco_detection_type = LaunchConfiguration('aruco_detection_type')
 
     common_parameters = [{'use_sim_time': False}]
-
+    
     # --- NUEVO: CARGAR EL URDF DEL ROBOT ---
     pkg_share = get_package_share_directory(package_name)
+    rviz_config_file = os.path.join(pkg_share, 'rviz', 'FinalChallenge.rviz')
     urdf_file = os.path.join(pkg_share, 'urdf', 'puzzlebot.urdf')
     with open(urdf_file, 'r') as infp:
         robot_desc = infp.read()
@@ -53,6 +54,13 @@ def generate_launch_description():
             'robot_description': robot_desc,
             'use_sim_time': False
         }]
+    )
+
+    joint_state_publisher_node = Node(
+        package='joint_state_publisher',
+        executable='joint_state_publisher',
+        name='joint_state_publisher',
+        parameters=[{'use_sim_time': False}],
     )
     # ---------------------------------------
 
@@ -142,7 +150,8 @@ def generate_launch_description():
         executable='rviz2',
         name='rviz2',
         output='screen',
-        parameters=[{'use_sim_time': False}] 
+        arguments=['-d', rviz_config_file],
+        parameters=[{'use_sim_time': False}]
     )
 
     return LaunchDescription([
@@ -174,6 +183,7 @@ def generate_launch_description():
         DeclareLaunchArgument('aruco_detection_type', default_value='visualization_marker_array', description='Tipo de deteccion.'),
         
         robot_state_publisher_node,
+        joint_state_publisher_node,
         localisation,
         raw_odom_node,
         aruco_tracker,

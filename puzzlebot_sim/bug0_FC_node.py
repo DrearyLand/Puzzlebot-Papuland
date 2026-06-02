@@ -18,14 +18,17 @@ def euler_from_quaternion(x, y, z, w):
 class Bug0Node(Node):  
     def __init__(self):  
         super().__init__('bug0_node') 
+        latched = qos.QoSProfile(depth=1)
+        latched.durability = qos.QoSDurabilityPolicy.TRANSIENT_LOCAL
+
         
-        self.cmd_pub = self.create_publisher(Twist, 'cmd_vel', 10)
-        self.odom_sub = self.create_subscription(Odometry, 'odom', self.odom_callback, 10)
+        self.cmd_pub = self.create_publisher(Twist, 'cmd_vel', latched)
+        self.odom_sub = self.create_subscription(Odometry, 'odom', self.odom_callback, latched)
         self.odom_sensor_sub = self.create_subscription(
             Odometry, 'odom', self.odom_callback, qos.qos_profile_sensor_data
         )
-        self.goal_sub = self.create_subscription(Pose2D, 'goal', self.goal_callback, 10)
-        self.scan_sub = self.create_subscription(LaserScan, 'scan', self.scan_callback, 10)
+        self.goal_sub = self.create_subscription(Pose2D, 'goal', self.goal_callback, latched)
+        self.scan_sub = self.create_subscription(LaserScan, 'scan', self.scan_callback, latched)
         self.scan_sensor_sub = self.create_subscription(
             LaserScan, 'scan', self.scan_callback, qos.qos_profile_sensor_data
         )

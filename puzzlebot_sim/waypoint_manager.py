@@ -9,9 +9,11 @@ import math
 class WaypointManager(Node):
     def __init__(self):
         super().__init__('waypoint_manager')
-        
-        self.publisher_ = self.create_publisher(Pose2D, 'goal', 10)
-        self.subscription = self.create_subscription(Odometry, 'odom', self.odom_callback, 10)
+        latched = QoSProfile(depth=1)
+        latched.durability = QoSDurabilityPolicy.TRANSIENT_LOCAL
+
+        self.publisher_ = self.create_publisher(Pose2D, 'goal', latched)
+        self.subscription = self.create_subscription(Odometry, 'odom', self.odom_callback, latched)
         
         # RUTA DEL LABERINTO (Un solo destino final)
         # Formato: (X, Y)

@@ -55,7 +55,7 @@ class LocalisationNode(Node):
             idx_r = msg.name.index('wheel_r_joint')
             self.wl = msg.velocity[idx_l]
             self.wr = msg.velocity[idx_r]
-        except ValueError:
+        except (ValueError, IndexError):
             pass
 
     def update_covariance(self, v, dt):
@@ -92,7 +92,7 @@ class LocalisationNode(Node):
         odom = Odometry()
         odom.header.stamp = current_time
         odom.header.frame_id = "odom"
-        odom.child_frame_id = "base_link"
+        odom.child_frame_id = "base_footprint"
         odom.pose.pose.position.x = self.x
         odom.pose.pose.position.y = self.y
         odom.pose.pose.orientation.x = q[0]
