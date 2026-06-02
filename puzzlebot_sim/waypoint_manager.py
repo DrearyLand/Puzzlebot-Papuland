@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
-from geometry_msgs.ms#!/usr/bin/env python3
-import rclpy
-from rclpy.node import Node
+from rclpy.qos import QoSProfile, QoSDurabilityPolicy
 from geometry_msgs.msg import Pose2D
 from nav_msgs.msg import Odometry
 import math

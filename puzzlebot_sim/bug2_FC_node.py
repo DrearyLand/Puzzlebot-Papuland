@@ -2,7 +2,6 @@
 import math
 import signal
 import sys
-
 import rclpy
 from rclpy import qos
 from rclpy.node import Node
