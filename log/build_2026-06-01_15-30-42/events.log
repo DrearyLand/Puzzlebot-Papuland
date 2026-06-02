@@ -1,0 +1,57 @@
+[0.000000] (-) TimerEvent: {}
+[0.000240] (puzzlebot_sim) JobQueued: {'identifier': 'puzzlebot_sim', 'dependencies': OrderedDict()}
+[0.000364] (puzzlebot_sim) JobStarted: {'identifier': 'puzzlebot_sim'}
+[0.097794] (-) TimerEvent: {}
+[0.198095] (-) TimerEvent: {}
+[0.298412] (-) TimerEvent: {}
+[0.398769] (-) TimerEvent: {}
+[0.499084] (-) TimerEvent: {}
+[0.599357] (-) TimerEvent: {}
+[0.699702] (-) TimerEvent: {}
+[0.800167] (-) TimerEvent: {}
+[0.900600] (-) TimerEvent: {}
+[1.000995] (-) TimerEvent: {}
+[1.101477] (-) TimerEvent: {}
+[1.201864] (-) TimerEvent: {}
+[1.207130] (puzzlebot_sim) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', 'build/puzzlebot_sim', 'build', '--build-base', '/root/Semestre8/Minichallenge/Puzzlebot-Papuland/build/puzzlebot_sim/build', 'install', '--record', '/root/Semestre8/Minichallenge/Puzzlebot-Papuland/build/puzzlebot_sim/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/root/Semestre8/Minichallenge/Puzzlebot-Papuland', 'env': {'HOSTNAME': 'dreary-ubuntu24', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/root', 'OLDPWD': '/root/Semestre8/Minichallenge', 'ROS_PYTHON_VERSION': '3', 'ROS_DISTRO': 'humble', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'GZ_VERSION': 'harmonic', 'PWD': '/root/Semestre8/Minichallenge/Puzzlebot-Papuland/build/puzzlebot_sim', 'TURTLEBOT3_MODEL': 'waffle', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/root/Semestre8/Minichallenge/Puzzlebot-Papuland/build/puzzlebot_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1'}, 'shell': False}
+[1.302038] (-) TimerEvent: {}
+[1.402400] (-) TimerEvent: {}
+[1.502714] (-) TimerEvent: {}
+[1.603013] (-) TimerEvent: {}
+[1.638037] (puzzlebot_sim) StdoutLine: {'line': b'running egg_info\n'}
+[1.638834] (puzzlebot_sim) StdoutLine: {'line': b'writing build/puzzlebot_sim/puzzlebot_sim.egg-info/PKG-INFO\n'}
+[1.639367] (puzzlebot_sim) StdoutLine: {'line': b'writing dependency_links to build/puzzlebot_sim/puzzlebot_sim.egg-info/dependency_links.txt\n'}
+[1.639697] (puzzlebot_sim) StdoutLine: {'line': b'writing entry points to build/puzzlebot_sim/puzzlebot_sim.egg-info/entry_points.txt\n'}
+[1.639928] (puzzlebot_sim) StdoutLine: {'line': b'writing requirements to build/puzzlebot_sim/puzzlebot_sim.egg-info/requires.txt\n'}
+[1.640117] (puzzlebot_sim) StdoutLine: {'line': b'writing top-level names to build/puzzlebot_sim/puzzlebot_sim.egg-info/top_level.txt\n'}
+[1.644667] (puzzlebot_sim) StdoutLine: {'line': b"reading manifest file 'build/puzzlebot_sim/puzzlebot_sim.egg-info/SOURCES.txt'\n"}
+[1.646599] (puzzlebot_sim) StdoutLine: {'line': b"writing manifest file 'build/puzzlebot_sim/puzzlebot_sim.egg-info/SOURCES.txt'\n"}
+[1.646878] (puzzlebot_sim) StdoutLine: {'line': b'running build\n'}
+[1.647049] (puzzlebot_sim) StdoutLine: {'line': b'running build_py\n'}
+[1.648292] (puzzlebot_sim) StdoutLine: {'line': b'copying puzzlebot_sim/ekf_vision_node.py -> /root/Semestre8/Minichallenge/Puzzlebot-Papuland/build/puzzlebot_sim/build/lib/puzzlebot_sim\n'}
+[1.649669] (puzzlebot_sim) StdoutLine: {'line': b'running install\n'}
+[1.650045] (puzzlebot_sim) StdoutLine: {'line': b'running install_lib\n'}
+[1.651657] (puzzlebot_sim) StdoutLine: {'line': b'copying /root/Semestre8/Minichallenge/Puzzlebot-Papuland/build/puzzlebot_sim/build/lib/puzzlebot_sim/ekf_vision_node.py -> /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim\n'}
+[1.653496] (puzzlebot_sim) StdoutLine: {'line': b'byte-compiling /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/ekf_vision_node.py to ekf_vision_node.cpython-310.pyc\n'}
+[1.656082] (puzzlebot_sim) StdoutLine: {'line': b'running install_data\n'}
+[1.658257] (puzzlebot_sim) StdoutLine: {'line': b'copying worlds/maze.world -> /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/share/puzzlebot_sim/worlds\n'}
+[1.658832] (puzzlebot_sim) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.661058] (puzzlebot_sim) StdoutLine: {'line': b"removing '/root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[1.661899] (puzzlebot_sim) StdoutLine: {'line': b'Copying build/puzzlebot_sim/puzzlebot_sim.egg-info to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim-0.0.0-py3.10.egg-info\n'}
+[1.663892] (puzzlebot_sim) StdoutLine: {'line': b'running install_scripts\n'}
+[1.690274] (puzzlebot_sim) StdoutLine: {'line': b'Installing Minichallenge1 script to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/puzzlebot_sim\n'}
+[1.690892] (puzzlebot_sim) StdoutLine: {'line': b'Installing bug0_FC_node script to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/puzzlebot_sim\n'}
+[1.691139] (puzzlebot_sim) StdoutLine: {'line': b'Installing bug0_node script to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/puzzlebot_sim\n'}
+[1.691412] (puzzlebot_sim) StdoutLine: {'line': b'Installing bug1_FC_node script to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/puzzlebot_sim\n'}
+[1.691650] (puzzlebot_sim) StdoutLine: {'line': b'Installing bug2_FC_node script to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/puzzlebot_sim\n'}
+[1.691826] (puzzlebot_sim) StdoutLine: {'line': b'Installing bug2_node script to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/puzzlebot_sim\n'}
+[1.692103] (puzzlebot_sim) StdoutLine: {'line': b'Installing ctrl_node script to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/puzzlebot_sim\n'}
+[1.692307] (puzzlebot_sim) StdoutLine: {'line': b'Installing ekf_vision_node script to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/puzzlebot_sim\n'}
+[1.692510] (puzzlebot_sim) StdoutLine: {'line': b'Installing loc_node script to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/puzzlebot_sim\n'}
+[1.692657] (puzzlebot_sim) StdoutLine: {'line': b'Installing sim_node script to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/puzzlebot_sim\n'}
+[1.692809] (puzzlebot_sim) StdoutLine: {'line': b'Installing traj_node script to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/puzzlebot_sim\n'}
+[1.693209] (puzzlebot_sim) StdoutLine: {'line': b"writing list of installed files to '/root/Semestre8/Minichallenge/Puzzlebot-Papuland/build/puzzlebot_sim/install.log'\n"}
+[1.703167] (-) TimerEvent: {}
+[1.724162] (puzzlebot_sim) CommandEnded: {'returncode': 0}
+[1.745855] (puzzlebot_sim) JobEnded: {'identifier': 'puzzlebot_sim', 'rc': 0}
+[1.747073] (-) EventReactorShutdown: {}

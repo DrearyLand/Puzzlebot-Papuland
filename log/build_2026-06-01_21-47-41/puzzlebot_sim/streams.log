@@ -1,0 +1,38 @@
+[1.116s] Invoking command in '/root/Semestre8/Minichallenge/Puzzlebot-Papuland': PYTHONPATH=/root/Semestre8/Minichallenge/Puzzlebot-Papuland/build/puzzlebot_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/puzzlebot_sim build --build-base /root/Semestre8/Minichallenge/Puzzlebot-Papuland/build/puzzlebot_sim/build install --record /root/Semestre8/Minichallenge/Puzzlebot-Papuland/build/puzzlebot_sim/install.log --single-version-externally-managed install_data
+[1.672s] running egg_info
+[1.673s] writing build/puzzlebot_sim/puzzlebot_sim.egg-info/PKG-INFO
+[1.674s] writing dependency_links to build/puzzlebot_sim/puzzlebot_sim.egg-info/dependency_links.txt
+[1.674s] writing entry points to build/puzzlebot_sim/puzzlebot_sim.egg-info/entry_points.txt
+[1.674s] writing requirements to build/puzzlebot_sim/puzzlebot_sim.egg-info/requires.txt
+[1.675s] writing top-level names to build/puzzlebot_sim/puzzlebot_sim.egg-info/top_level.txt
+[1.678s] reading manifest file 'build/puzzlebot_sim/puzzlebot_sim.egg-info/SOURCES.txt'
+[1.680s] writing manifest file 'build/puzzlebot_sim/puzzlebot_sim.egg-info/SOURCES.txt'
+[1.681s] running build
+[1.681s] running build_py
+[1.681s] copying puzzlebot_sim/waypoint_manager.py -> /root/Semestre8/Minichallenge/Puzzlebot-Papuland/build/puzzlebot_sim/build/lib/puzzlebot_sim
+[1.682s] copying puzzlebot_sim/arucostatus.py -> /root/Semestre8/Minichallenge/Puzzlebot-Papuland/build/puzzlebot_sim/build/lib/puzzlebot_sim
+[1.683s] running install
+[1.683s] running install_lib
+[1.685s] copying /root/Semestre8/Minichallenge/Puzzlebot-Papuland/build/puzzlebot_sim/build/lib/puzzlebot_sim/waypoint_manager.py -> /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim
+[1.685s] copying /root/Semestre8/Minichallenge/Puzzlebot-Papuland/build/puzzlebot_sim/build/lib/puzzlebot_sim/arucostatus.py -> /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim
+[1.687s] byte-compiling /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/waypoint_manager.py to waypoint_manager.cpython-310.pyc
+[1.688s] byte-compiling /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim/arucostatus.py to arucostatus.cpython-310.pyc
+[1.690s] running install_data
+[1.692s] running install_egg_info
+[1.694s] removing '/root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim-0.0.0-py3.10.egg-info' (and everything under it)
+[1.695s] Copying build/puzzlebot_sim/puzzlebot_sim.egg-info to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/python3.10/site-packages/puzzlebot_sim-0.0.0-py3.10.egg-info
+[1.697s] running install_scripts
+[1.726s] Installing Minichallenge1 script to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/puzzlebot_sim
+[1.726s] Installing arucostatus script to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/puzzlebot_sim
+[1.727s] Installing bug0_FC_node script to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/puzzlebot_sim
+[1.727s] Installing bug0_node script to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/puzzlebot_sim
+[1.727s] Installing bug2_FC_node script to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/puzzlebot_sim
+[1.728s] Installing bug2_node script to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/puzzlebot_sim
+[1.728s] Installing ctrl_node script to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/puzzlebot_sim
+[1.728s] Installing ekf_physical_node script to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/puzzlebot_sim
+[1.728s] Installing loc_node script to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/puzzlebot_sim
+[1.728s] Installing sim_node script to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/puzzlebot_sim
+[1.729s] Installing traj_node script to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/puzzlebot_sim
+[1.729s] Installing waypoint_manager script to /root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/puzzlebot_sim
+[1.730s] writing list of installed files to '/root/Semestre8/Minichallenge/Puzzlebot-Papuland/build/puzzlebot_sim/install.log'
+[1.759s] Invoked command in '/root/Semestre8/Minichallenge/Puzzlebot-Papuland' returned '0': PYTHONPATH=/root/Semestre8/Minichallenge/Puzzlebot-Papuland/build/puzzlebot_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/Semestre8/Minichallenge/Puzzlebot-Papuland/install/puzzlebot_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/puzzlebot_sim build --build-base /root/Semestre8/Minichallenge/Puzzlebot-Papuland/build/puzzlebot_sim/build install --record /root/Semestre8/Minichallenge/Puzzlebot-Papuland/build/puzzlebot_sim/install.log --single-version-externally-managed install_data

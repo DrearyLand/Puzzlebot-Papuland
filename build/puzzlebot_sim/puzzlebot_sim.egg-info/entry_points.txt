@@ -1,10 +1,14 @@
 [console_scripts]
 Minichallenge1 = puzzlebot_sim.Minichallenge1:main
-bug0_FC_node = puzzlebot_sim.bug0_FC_node:mainbug1_FC_node = puzzlebot_sim.bug1_FC_node:mainbug2_FC_node = puzzlebot_sim.bug2_FC_node:main
+arucostatus = puzzlebot_sim.arucostatus:main
+bug0_FC_node = puzzlebot_sim.bug0_FC_node:main
 bug0_node = puzzlebot_sim.bug0_node:main
+bug2_FC_node = puzzlebot_sim.bug2_FC_node:main
 bug2_node = puzzlebot_sim.bug2_node:main
 ctrl_node = puzzlebot_sim.control_node:main
+ekf_physical_node = puzzlebot_sim.ekf_physical_node:main
 loc_node = puzzlebot_sim.localisation_node:main
 sim_node = puzzlebot_sim.puzzlebot_sim_node:main
 traj_node = puzzlebot_sim.trajectory_node:main
+waypoint_manager = puzzlebot_sim.waypoint_manager:main
 
