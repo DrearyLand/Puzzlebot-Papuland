@@ -1,3 +1,6 @@
+import os
+from ament_index_python.packages import get_package_share_directory
+
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, SetEnvironmentVariable
 from launch.conditions import IfCondition
@@ -36,7 +39,23 @@ def generate_launch_description():
 
     common_parameters = [{'use_sim_time': False}]
 
-    # 1. EKF FÍSICO (Odometría Corregida por Visión)
+    # --- NUEVO: CARGAR EL URDF DEL ROBOT ---
+    pkg_share = get_package_share_directory(package_name)
+    urdf_file = os.path.join(pkg_share, 'urdf', 'puzzlebot.urdf')
+    with open(urdf_file, 'r') as infp:
+        robot_desc = infp.read()
+
+    robot_state_publisher_node = Node(
+        package='robot_state_publisher',
+        executable='robot_state_publisher',
+        output='screen',
+        parameters=[{
+            'robot_description': robot_desc,
+            'use_sim_time': False
+        }]
+    )
+    # ---------------------------------------
+
     localisation = Node(
         package=package_name,
         executable='ekf_physical_node',
@@ -51,7 +70,6 @@ def generate_launch_description():
         ],
     )
 
-    # 1.5 ODOMETRÍA PURA (Elipse que crece con la incertidumbre)
     raw_odom_node = Node(
         package=package_name,
         executable='localisation_node',
@@ -60,7 +78,6 @@ def generate_launch_description():
         parameters=[{'use_sim_time': False}]
     )
 
-    # 2. BUG2 FÍSICO (Evasión sintonizada para la pista real)
     bug2_node = Node(
         package=package_name,
         executable='bug2_FC_node',
@@ -89,7 +106,6 @@ def generate_launch_description():
         ],
     )
 
-    # 3. RASTREADOR DE ARUCOS (Visión por cámara)
     aruco_tracker = Node(
         package='aruco_opencv',
         executable='aruco_tracker_autostart',
@@ -102,7 +118,6 @@ def generate_launch_description():
         ],
     )
 
-    # 4. MONITOR DE ARUCOS (Imprime en terminal qué ID está viendo la cámara)
     aruco_monitor = Node(
         package=package_name,
         executable='arucostatus',
@@ -115,7 +130,6 @@ def generate_launch_description():
         ],
     )
 
-    # 5. INYECTOR DE RUTAS (Inyecta las coordenadas al Bug2 paso a paso)
     waypoint_node = Node(
         package=package_name,
         executable='waypoint_manager',
@@ -123,7 +137,6 @@ def generate_launch_description():
         output='screen'
     )
 
-    # 6. RVIZ2 (Para monitorear las elipses de covarianza en tiempo real)
     rviz_node = Node(
         package='rviz2',
         executable='rviz2',
@@ -160,6 +173,7 @@ def generate_launch_description():
         DeclareLaunchArgument('aruco_detection_topic', default_value='/marker_publisher/markers', description='Topico de detecciones.'),
         DeclareLaunchArgument('aruco_detection_type', default_value='visualization_marker_array', description='Tipo de deteccion.'),
         
+        robot_state_publisher_node,
         localisation,
         raw_odom_node,
         aruco_tracker,
