@@ -51,11 +51,11 @@ def generate_launch_description():
         ],
     )
 
-    # 2. BUG 2 FÍSICO (Evasión sintonizada para la pista real)
+    # 2. BUG2 FÍSICO (Evasión sintonizada para la pista real)
     bug2_node = Node(
         package=package_name,
-        executable='bug2_node',
-        name='bug2_node',
+        executable='bug2_FC_node',
+        name='bug2_FC_node',
         output='screen',
         parameters=[
             {'use_sim_time': False},
@@ -96,13 +96,13 @@ def generate_launch_description():
     # 4. MONITOR DE ARUCOS (Imprime en terminal qué está viendo la cámara)
     aruco_monitor = Node(
         package=package_name,
-        executable='aruco_detection_monitor',
-        name='aruco_detection_monitor',
+        executable='arucostatus',
+        name='arucostatus',
         output='screen',
         condition=IfCondition(use_aruco_monitor),
         parameters=[
-            {'detection_topic': aruco_detection_topic},
-            {'detection_type': aruco_detection_type},
+            {'detection_topic': '/aruco_detections'},
+            {'detection_type': 'aruco_opencv'},
         ],
     )
 

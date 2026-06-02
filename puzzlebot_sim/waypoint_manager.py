@@ -3,13 +3,15 @@ import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Pose2D
 from nav_msgs.msg import Odometry
+from rclpy.qos import QoSProfile,DurabilityPolicy
 import math
 
 class WaypointManager(Node):
     def __init__(self):
         super().__init__('waypoint_manager')
-        
-        self.publisher_ = self.create_publisher(Pose2D, 'goal', 10)
+        latched = QoSProfile(depth=1)
+        latched.durability = DurabilityPolicy.TRANSIENT_LOCAL
+        self.publisher_ = self.create_publisher(Pose2D, 'goal', latched)
         self.subscription = self.create_subscription(Odometry, 'odom', self.odom_callback, 10)
         
         # RUTA DEL LABERINTO
