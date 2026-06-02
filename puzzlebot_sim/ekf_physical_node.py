@@ -119,9 +119,13 @@ class EKFPhysical(Node):
             if m_id in self.aruco_map:
                 m_x, m_y = self.aruco_map[m_id]
                 
-                # Z: Medición Euclidiana de la cámara
+                # --- AJUSTE DE TRANSFORMACIÓN (Cámara a Centro del Robot) ---
+                offset_frontal = 0.08  # 8 cm desde el centro a la cámara
+                
+                # Z: Medición Euclidiana (Trasladada al centro del robot)
                 dx_cam = marker.pose.position.x
-                dz_cam = marker.pose.position.z 
+                dz_cam = marker.pose.position.z + offset_frontal 
+                
                 d_medido = math.sqrt(dx_cam**2 + dz_cam**2)
                 phi_medido = math.atan2(dx_cam, dz_cam)
                 Z = np.array([[d_medido], [phi_medido]])
