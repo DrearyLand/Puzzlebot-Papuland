@@ -154,6 +154,15 @@ def generate_launch_description():
         parameters=[{'use_sim_time': False}]
     )
 
+    laser_tf_fix = Node(
+    package='tf2_ros',
+    executable='static_transform_publisher',
+    name='laser_tf_fix',
+    arguments=['--x', '0', '--y', '0', '--z', '0',
+               '--yaw', '0', '--pitch', '0', '--roll', '0',
+               '--frame-id', 'laser_link', '--child-frame-id', 'laser'],
+)
+
     return LaunchDescription([
         SetEnvironmentVariable('ROS_LOCALHOST_ONLY', '0'),
         DeclareLaunchArgument('use_localisation', default_value='true', description='Genera odom desde encoders con EKF.'),
@@ -190,5 +199,6 @@ def generate_launch_description():
         aruco_monitor,
         bug2_node,
         waypoint_node,
-        rviz_node
+        rviz_node,
+        laser_tf_fix,
     ])

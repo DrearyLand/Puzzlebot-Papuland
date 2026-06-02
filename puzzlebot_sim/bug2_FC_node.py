@@ -66,15 +66,15 @@ class Bug2Node(Node):
         self.declare_parameter('wall_follow_goal_tolerance', 0.18)
         self.declare_parameter('goal_pass_margin', 0.02)
         self.declare_parameter('goal_pass_lateral_tolerance', 0.22)
-        self.declare_parameter('near_goal_slow_distance', 0.35)
-        self.declare_parameter('near_goal_v_max', 0.025)
+        self.declare_parameter('near_goal_slow_distance', 0.20)
+        self.declare_parameter('near_goal_v_max', 0.06)
         self.declare_parameter('m_line_tolerance', 0.10)
         self.declare_parameter('min_hit_separation', 0.35)
         self.declare_parameter('hit_return_tolerance', 0.18)
         self.declare_parameter('m_line_goal_improvement', 0.12)
-        self.declare_parameter('k_rho', 0.6)
+        self.declare_parameter('k_rho', 0.8)
         self.declare_parameter('k_alpha', 1.5)
-        self.declare_parameter('v_max', 0.08)
+        self.declare_parameter('v_max', 0.15)
         self.declare_parameter('w_max', 0.40)
         self.declare_parameter('heading_tolerance', 0.15)
         self.declare_parameter('min_forward_speed', 0.02)
@@ -90,6 +90,9 @@ class Bug2Node(Node):
         self.declare_parameter('require_scan', True)
         self.declare_parameter('require_odom', True)
         self.declare_parameter('scan_front_angle', 0.0)
+        self.declare_parameter('k_wall', 2.5)
+        self.declare_parameter('wall_follow_speed', 0.10)
+        
 
         self.goal_tolerance = self.get_parameter('goal_tolerance').value
         self.wall_follow_goal_tolerance = self.get_parameter('wall_follow_goal_tolerance').value
@@ -119,6 +122,8 @@ class Bug2Node(Node):
         self.require_scan = self.get_parameter('require_scan').value
         self.require_odom = self.get_parameter('require_odom').value
         self.scan_front_angle = self.get_parameter('scan_front_angle').value
+        self.k_wall = self.get_parameter('k_wall').value
+        self.wall_follow_speed = self.get_parameter('wall_follow_speed').value
 
         self.create_timer(0.05, self.control_loop)
         self.get_logger().info('Nodo Bug2 fisico inicializado. Esperando meta en goal...')
@@ -351,25 +356,21 @@ class Bug2Node(Node):
                 slow_band = self.front_slow_distance - self.front_stop_distance
                 msg.linear.x *= self.clamp(clearance / slow_band, 0.0, 1.0)
 
-        elif self.state == 'WALL_FOLLOWING':
-            if self.regions['front'] < self.front_stop_distance:
-                msg.linear.x = 0.0
-                msg.angular.z = self.w_max
-            elif closest_front_range is not None and closest_front_range < self.front_stop_distance:
-                self.set_avoidance_command(msg, closest_front_range, closest_front_angle)
-            elif self.regions['fright'] < self.wall_distance:
-                msg.linear.x = 0.025
-                msg.angular.z = 0.22
-            elif self.regions['right'] < self.wall_distance:
-                if self.regions['right'] < self.right_too_close:
-                    msg.linear.x = 0.03
-                    msg.angular.z = 0.18
+            elif self.state == 'WALL_FOLLOWING':
+                if self.regions['front'] < self.front_stop_distance:
+                    msg.linear.x = 0.0
+                    msg.angular.z = 0.6 * self.w_max
+                elif closest_front_range is not None and closest_front_range < self.front_stop_distance:
+                    self.set_avoidance_command(msg, closest_front_range, closest_front_angle)
                 else:
-                    msg.linear.x = 0.04
-                    msg.angular.z = -0.03
-            else:
-                msg.linear.x = 0.02
-                msg.angular.z = -self.w_max
+                    error = self.regions['right'] - self.wall_distance
+                    msg.angular.z = self.clamp(-self.k_wall * error, -self.w_max, self.w_max)
+                    turn_penalty = max(0.0, 1.0 - abs(msg.angular.z) / self.w_max)
+                    msg.linear.x = self.clamp(
+                        self.wall_follow_speed * turn_penalty,
+                        self.min_forward_speed,
+                        self.v_max,
+                    )
 
         self.cmd_pub.publish(msg)
         self.publish_diagnostics(msg, dist_to_goal, err_theta, odom_age, scan_age)

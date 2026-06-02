@@ -66,7 +66,7 @@ class EKFPhysical(Node):
             idx_l = msg.name.index('wheel_l_joint')
             self.wr = msg.velocity[idx_r]
             self.wl = msg.velocity[idx_l]
-        except ValueError:
+        except (ValueError, IndexError):
             pass
 
     def wr_callback(self, msg):

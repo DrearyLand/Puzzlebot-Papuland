@@ -13,7 +13,7 @@ class WaypointManager(Node):
         latched.durability = QoSDurabilityPolicy.TRANSIENT_LOCAL
 
         self.publisher_ = self.create_publisher(Pose2D, 'goal', latched)
-        self.subscription = self.create_subscription(Odometry, 'odom', self.odom_callback, latched)
+        self.subscription = self.create_subscription(Odometry, 'odom', self.odom_callback, 10)
         
         # RUTA DEL LABERINTO (Un solo destino final)
         # Formato: (X, Y)
