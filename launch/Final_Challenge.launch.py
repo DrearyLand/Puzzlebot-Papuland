@@ -36,7 +36,7 @@ def generate_launch_description():
 
     common_parameters = [{'use_sim_time': False}]
 
-    # 1. EKF FÍSICO
+    # 1. EKF FÍSICO (Odometría Corregida por Visión)
     localisation = Node(
         package=package_name,
         executable='ekf_physical_node',
@@ -49,6 +49,15 @@ def generate_launch_description():
             ('VelocityEncR', wr_topic),
             ('VelocityEncL', wl_topic),
         ],
+    )
+
+    # 1.5 ODOMETRÍA PURA (Elipse que crece con la incertidumbre)
+    raw_odom_node = Node(
+        package=package_name,
+        executable='localisation_node',
+        name='raw_localisation_node',
+        output='screen',
+        parameters=[{'use_sim_time': False}]
     )
 
     # 2. BUG2 FÍSICO (Evasión sintonizada para la pista real)
@@ -93,7 +102,7 @@ def generate_launch_description():
         ],
     )
 
-    # 4. MONITOR DE ARUCOS (Imprime en terminal qué está viendo la cámara)
+    # 4. MONITOR DE ARUCOS (Imprime en terminal qué ID está viendo la cámara)
     aruco_monitor = Node(
         package=package_name,
         executable='arucostatus',
@@ -152,6 +161,7 @@ def generate_launch_description():
         DeclareLaunchArgument('aruco_detection_type', default_value='visualization_marker_array', description='Tipo de deteccion.'),
         
         localisation,
+        raw_odom_node,
         aruco_tracker,
         aruco_monitor,
         bug2_node,

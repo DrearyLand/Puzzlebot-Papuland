@@ -45,6 +45,7 @@ setup(
             'ekf_physical_node = puzzlebot_sim.ekf_physical_node:main',
             'waypoint_manager = puzzlebot_sim.waypoint_manager:main',
             'arucostatus = puzzlebot_sim.arucostatus:main',
+            'localisation_node = puzzlebot_sim.localisation_node:main',
         ],
     },
 )
