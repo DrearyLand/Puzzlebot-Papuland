@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
+#EKF FÍSICO: FUSIÓN DE ENCODERS + VISIÓN (ARUCO)
+
 import rclpy
 from rclpy import qos
 from rclpy.node import Node
 from nav_msgs.msg import Odometry
 from sensor_msgs.msg import JointState
 from std_msgs.msg import Float32
-from aruco_opencv_msgs.msg import ArucoDetection
+from aruco_msgs.msg import MarkerArray
 import math
 import numpy as np
 
@@ -18,9 +20,9 @@ class EKFPhysical(Node):
         super().__init__('ekf_physical_node')
         
         self.joint_sub = self.create_subscription(JointState, 'joint_states', self.joint_callback, 10)
-        self.wr_sub = self.create_subscription(Float32, 'VelocityEncR', self.wr_callback, 10)
-        self.wl_sub = self.create_subscription(Float32, 'VelocityEncL', self.wl_callback, 10)
-        self.aruco_sub = self.create_subscription(ArucoDetection, '/aruco_detections', self.vision_callback, 10)
+        self.wr_sub = self.create_subscription(Float32, 'VelocityEncR', self.wr_callback, qos.qos_profile_sensor_data)
+        self.wl_sub = self.create_subscription(Float32, 'VelocityEncL', self.wl_callback, qos.qos_profile_sensor_data)
+        self.aruco_sub = self.create_subscription(MarkerArray, '/marker_publisher/markers', self.vision_callback, 10)
         self.odom_pub = self.create_publisher(Odometry, 'odom', 10)
         
         # NUEVO: Inicializador del publicador de Transformaciones (TF)
@@ -28,8 +30,8 @@ class EKFPhysical(Node):
 
         self.kr = 0.01
         self.kl = 0.01
-        self.r = 0.05
-        self.l = 0.19
+        self.r = 0.045
+        self.l = 0.17
 
         self.wr = 0.0
         self.wl = 0.0
@@ -108,13 +110,13 @@ class EKFPhysical(Node):
 
     def vision_callback(self, msg):
         for marker in msg.markers:
-            m_id = marker.marker_id
+            m_id = marker.id
             if m_id in self.aruco_map:
                 m_x, m_y = self.aruco_map[m_id]
                 
                 offset_frontal = 0.08  
-                dx_cam = marker.pose.position.x
-                dz_cam = marker.pose.position.z + offset_frontal 
+                dx_cam = marker.pose.pose.position.x
+                dz_cam = marker.pose.pose.position.z + offset_frontal
                 
                 d_medido = math.sqrt(dx_cam**2 + dz_cam**2)
                 phi_medido = math.atan2(dx_cam, dz_cam)

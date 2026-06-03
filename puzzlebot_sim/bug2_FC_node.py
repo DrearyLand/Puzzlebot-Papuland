@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# BUG2 FÍSICO: CONTROL REACTIVO CON LIDAR (SIN MAPA, SIN MEMORIA)
 import math
 import signal
 import sys
@@ -350,19 +351,26 @@ class Bug2Node(Node):
             if dist_to_goal < self.near_goal_slow_distance:
                 near_factor = self.clamp(dist_to_goal / self.near_goal_slow_distance, 0.25, 1.0)
                 msg.linear.x = min(msg.linear.x, self.near_goal_v_max * near_factor)
-
+            
             if msg.linear.x > 0.0 and closest_front_range is not None and closest_front_range < self.front_slow_distance:
                 clearance = closest_front_range - self.front_stop_distance
                 slow_band = self.front_slow_distance - self.front_stop_distance
                 msg.linear.x *= self.clamp(clearance / slow_band, 0.0, 1.0)
 
-            elif self.state == 'WALL_FOLLOWING':
-                if self.regions['front'] < self.front_stop_distance:
-                    msg.linear.x = 0.0
-                    msg.angular.z = 0.6 * self.w_max
-                elif closest_front_range is not None and closest_front_range < self.front_stop_distance:
-                    self.set_avoidance_command(msg, closest_front_range, closest_front_angle)
+        elif self.state == 'WALL_FOLLOWING':
+            if self.regions['front'] < self.front_stop_distance:
+                msg.linear.x = 0.0
+                msg.angular.z = 0.6 * self.w_max
+            elif closest_front_range is not None and closest_front_range < self.front_stop_distance:
+                self.set_avoidance_command(msg, closest_front_range, closest_front_angle)
+            else:
+                if self.regions['right'] > self.wall_follow_start_distance * 2.0:
+                    # No hay pared a la derecha: avanza buscándola con giro suave
+                    msg.linear.x = self.wall_follow_speed
+                    msg.angular.z = -0.5 * self.k_wall * (self.regions['right'] - self.wall_distance)
+                    msg.angular.z = self.clamp(msg.angular.z, -0.3 * self.w_max, 0.3 * self.w_max)
                 else:
+                    # Pared a la derecha visible: control proporcional normal
                     error = self.regions['right'] - self.wall_distance
                     msg.angular.z = self.clamp(-self.k_wall * error, -self.w_max, self.w_max)
                     turn_penalty = max(0.0, 1.0 - abs(msg.angular.z) / self.w_max)
@@ -371,6 +379,7 @@ class Bug2Node(Node):
                         self.min_forward_speed,
                         self.v_max,
                     )
+
 
         self.cmd_pub.publish(msg)
         self.publish_diagnostics(msg, dist_to_goal, err_theta, odom_age, scan_age)
